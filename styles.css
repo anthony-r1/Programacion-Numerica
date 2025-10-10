@@ -1,0 +1,95 @@
+/* ... (Todo el CSS de index.html y unidad_1.html va aquí) ... */
+
+/* [NUEVOS ESTILOS AÑADIDOS DE LOS 5 TEMAS] */
+
+/* Estilos para Contenedores Específicos de Temas (Reconocimiento/Restricción/Graficador) */
+
+.section-card, .type-card {
+    background: var(--secondary-bg);
+    border-radius: 20px;
+    border: 2px solid rgba(139, 92, 246, 0.2); /* Color terciario para diferenciación */
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.section-card:hover, .type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+    border-color: var(--tertiary-color);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    color: var(--tertiary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card-content {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Estilos para Graficador y Código */
+
+.code-section {
+    background: var(--accent-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.code-title {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.code-block {
+    background: #000000;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #f1f5f9;
+}
+
+/* Estilos para el Bloque de Pre-Visualización ASCII (Graficador) */
+.ascii-graph {
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    color: #10b981; /* Verde (Success Color) */
+    background: #0f172a;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.info-box {
+    background: rgba(245, 158, 11, 0.1); /* Color de advertencia/warning */
+    border-left: 5px solid var(--warning-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.info-box-title {
+    font-size: 1.2rem;
+    color: var(--warning-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-box p {
+    color: var(--text-muted);
+}

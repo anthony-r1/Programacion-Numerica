@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Newton Raphson - Programación Numérica</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header sticky-unit">
+        <div class="container">
+            <div class="header-content">
+                <a href="unidad_1.html" class="back-button">← Volver a Unidad 1</a> 
+                <h1 class="unit-title">Newton Raphson</h1>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title" style="background: linear-gradient(135deg, var(--tertiary-color), var(--primary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                🎯 Método de Newton Raphson
+            </h1>
+            <p class="hero-subtitle">El método abierto más rápido para encontrar raíces.</p>
+        </div>
+    </section>
+
+    <section class="description-section">
+        <div class="container">
+            
+            <div class="description-card" style="border-color: rgba(139, 92, 246, 0.2);">
+                <h2 class="description-title" style="color: var(--tertiary-color);">
+                    <span>🔬</span>
+                    Fórmula y Concepto
+                </h2>
+                <p class="description-text">
+                    El método de Newton-Raphson es un método abierto que utiliza la derivada de la función 
+                    en un punto inicial para proyectar una aproximación más cercana a la raíz. 
+                    Su fórmula se basa en la aproximación de la serie de Taylor:
+                    <br><br>
+                    \[ x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \]
+                    <br>
+                    Donde **\(x_i\)** es la aproximación actual y **\(f'(x_i)\)** es la derivada de la función evaluada en ese punto.
+                </p>
+            </div>
+            
+            <div class="code-section">
+                <h3 class="code-title" style="color: var(--tertiary-color);">Clase de Implementación (Python)</h3>
+                <pre class="code-block" style="border-left-color: var(--tertiary-color);">
+<span class="keyword">class</span> <span class="class-name">NewtonRaphson:</span>
+    <span class="keyword">def</span> <span class="function">__init__</span>(self, ecuacion):
+        self.ecuacion = ecuacion
+        self.derivada = self.derivar(ecuacion) <span class="comment"># Función para calcular la derivada</span>
+
+    <span class="keyword">def</span> <span class="function">derivar</span>(self, ecuacion):
+        <span class="comment"># Lógica simple de derivación para polinomios (ej. x^n -> n*x^(n-1))</span>
+        <span class="keyword">if</span> <span class="string">"x"</span> <span class="keyword">not in</span> ecuacion:
+            <span class="keyword">return</span> <span class="string">"0"</span>
+        
+        coef_str = ecuacion[:idx]
+        coef = <span class="number">1</span> <span class="keyword">if</span> coef_str <span class="keyword">in</span> [<span class="string">""</span>, <span class="string">"+"</span>] <span class="keyword">else</span> <span class="number">-1</span> <span class="keyword">if</span> coef_str == <span class="string">"-"</span> <span class="keyword">else</span> <span class="function">float</span>(coef_str)
+        
+        nuevo_coef, nuevo_exp = coef * exp, exp - <span class="number">1</span>
+        
+        <span class="keyword">if</span> nuevo_exp == <span class="number">0</span>:
+            <span class="keyword">return</span> <span class="function">str</span>(nuevo_coef)
+        <span class="keyword">elif</span> nuevo_exp == <span class="number">1</span>:
+            <span class="keyword">return</span> <span class="string">f"{nuevo_coef}*x"</span>
+        <span class="keyword">return</span> <span class="string">f"{nuevo_coef}*x**{nuevo_exp}"</span>
+
+    <span class="keyword">def</span> <span class="function">resolver</span>(self, x0, tol=<span class="number">1e-4</span>, max_iter=<span class="number">100</span>):
+        <span class="comment"># ... Lógica principal de la iteración ...</span>
+        <span class="keyword">return</span> x_solucion
+                </pre>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-box-title">
+                    <span>⚠️</span>
+                    Advertencia de Convergencia
+                </div>
+                <p>
+                    A pesar de su rapidez (convergencia cuadrática), **Newton-Raphson no siempre converge**. 
+                    Si el punto inicial **\(x_0\)** está cerca de un máximo o un mínimo, donde la derivada 
+                    (\(f'(x)\)) es cercana a cero, el método puede diverger o saltar muy lejos de la raíz.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Portafolio Programación Numérica - Anthony Rusbel</p>
+        </div>
+    </footer>
+
+    <script>
+        // ... (Tu código JavaScript para estrellas y animaciones) ...
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Parallax effect for header
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const stars = document.querySelectorAll('.star');
+            
+            stars.forEach((star, index) => {
+                const speed = (index % 3 + 1) * 0.1;
+                star.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
