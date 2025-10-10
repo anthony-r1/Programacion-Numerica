@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricción de Funciones Lineales - Programación Numérica</title>
+    
+  <link rel="stylesheet" href="..//Archivos css/restricciones.css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="unidad1.html" class="back-button" onclick="history.back(); return false;">← Volver</a>
+                <h1 class="header-title">Programación Numérica</h1>
+                <div class="student-info">
+                    <span class="info-badge">👨‍🎓 Anthony Rusbel Puma Huanca</span>
+                    <span class="info-badge">📋 Código: 240132</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">🔗</div>
+            <h1 class="hero-title">Restricción de Funciones Lineales</h1>
+            <p class="hero-subtitle">Problemas de Programación Lineal</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="intro-section">
+            <div class="intro-card">
+                <h2 class="intro-title">
+                    <span>💡</span>
+                    Actividad de Clase
+                </h2>
+                <div class="intro-content">
+                    <p>
+                        La programación lineal es una técnica matemática utilizada para optimizar recursos limitados.
+                        En esta actividad resolveremos cinco problemas prácticos del mundo tecnológico y empresarial,
+                        formulando restricciones y analizando soluciones factibles mediante métodos gráficos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="problems-grid">
+                <!-- Problema 1 -->
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <div class="problem-number">1</div>
+                        <div>
+                            <h3 class="problem-title">Desarrollo Front-end y Back-end</h3>
+                        </div>
+                    </div>
+                    
+                    <p class="problem-description">
+                        Un desarrollador tiene 15 horas semanales para dedicar al desarrollo de software de front-end y back-end.
+                        Debe dedicar al menos 5 horas al desarrollo de front-end para cumplir con los entregables del cliente.
+                    </p>
+                    
+                    <div class="problem-section">
+                        <div class="section-label">Variables:</div>
+                        <div class="section-content">
+                            <span class="variable-badge">x</span> = horas semanales en front-end<br>
+                            <span class="variable-badge">y</span> = horas semanales en back-end
+                        </div>
+                    </div>
+
+                    <div class="problem-section">
+                        <div class="section-label">Restricciones:</div>
+                        <div class="section-content">
+                            <ul class="restrictions-list">
+                                <li><span class="variable-badge">x + y ≤ 15</span> (tiempo total disponible)</li>
+                                <li><span class="variable-badge">x ≥ 5</span> (mínimo front-end)</li>
+                                <li><span class="variable-badge">x ≥ 0, y ≥ 0</span> (no negatividad)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problema 2 -->
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <div class="problem-number">2</div>
+                        <div>
+                            <h3 class="problem-title">Administración de Servidores</h3>
+                        </div>
+                    </div>
+                    
+                    <p class="problem-description">
+                        Un ingeniero administra servidores en la nube tipo A (S/ 3/hora) y tipo B (S/ 5/hora).
+                        El presupuesto máximo semanal es de S/ 20.
+                    </p>
+                    
+                    <div class="problem-section">
+                        <div class="section-label">Variables:</div>
+                        <div class="section-content">
+                            <span class="variable-badge">x</span> = horas del Servidor A<br>
+                            <span class="variable-badge">y</span> = horas del Servidor B
+                        </div>
+                    </div>
+
+                    <div class="problem-section">
+                        <div class="section-label">Restricciones:</div>
+                        <div class="section-content">
+                            <ul class="restrictions-list">
+                                <li><span class="variable-badge">3x + 5y ≤ 20</span> (presupuesto)</li>
+                                <li><span class="variable-badge">x ≥ 0, y ≥ 0</span> (no negatividad)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problema 3 -->
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <div class="problem-number">3</div>
+                        <div>
+                            <h3 class="problem-title">Gestión de Proyectos</h3>
+                        </div>
+                    </div>
+                    
+                    <p class="problem-description">
+                        Un administrador organiza su tiempo entre reuniones con stakeholders (mínimo 4h) y documentación técnica (mínimo 6h).
+                        Dispone de 12 horas semanales.
+                    </p>
+                    
+                    <div class="problem-section">
+                        <div class="section-label">Variables:</div>
+                        <div class="section-content">
+                            <span class="variable-badge">x</span> = horas en reuniones<br>
+                            <span class="variable-badge">y</span> = horas en documentación
+                        </div>
+                    </div>
+
+                    <div class="problem-section">
+                        <div class="section-label">Restricciones:</div>
+                        <div class="section-content">
+                            <ul class="restrictions-list">
+                                <li><span class="variable-badge">x ≥ 4</span> (mínimo reuniones)</li>
+                                <li><span class="variable-badge">y ≥ 6</span> (mínimo documentación)</li>
+                                <li><span class="variable-badge">x + y ≤ 12</span> (tiempo total)</li>
+                                <li><span class="variable-badge">x ≥ 0, y ≥ 0</span> (no negatividad)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problema 4 -->
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <div class="problem-number">4</div>
+                        <div>
+                            <h3 class="problem-title">Desarrollo de Videojuegos</h3>
+                        </div>
+                    </div>
+                    
+                    <p class="problem-description">
+                        Una empresa produce modelos 3D (2h cada uno) y texturas (3h cada una).
+                        El equipo tiene 18 horas disponibles semanalmente.
+                    </p>
+                    
+                    <div class="problem-section">
+                        <div class="section-label">Variables:</div>
+                        <div class="section-content">
+                            <span class="variable-badge">x</span> = número de modelos 3D<br>
+                            <span class="variable-badge">y</span> = número de texturas
+                        </div>
+                    </div>
+
+                    <div class="problem-section">
+                        <div class="section-label">Restricciones:</div>
+                        <div class="section-content">
+                            <ul class="restrictions-list">
+                                <li><span class="variable-badge">2x + 3y ≤ 18</span> (tiempo disponible)</li>
+                                <li><span class="variable-badge">x ≥ 0, y ≥ 0</span> (no negatividad)</li>
+                                <li><span class="variable-badge">x, y ∈ ℤ</span> (unidades enteras)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problema 5 -->
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <div class="problem-number">5</div>
+                        <div>
+                            <h3 class="problem-title">Startup de Hardware</h3>
+                        </div>
+                    </div>
+                    
+                    <p class="problem-description">
+                        Ensambla dispositivos tipo A (5 componentes, S/ 200 ganancia) y tipo B (10 componentes, S/ 350 ganancia).
+                        Máximo 50 componentes disponibles.
+                    </p>
+                    
+                    <div class="problem-section">
+                        <div class="section-label">Variables:</div>
+                        <div class="section-content">
+                            <span class="variable-badge">x</span> = dispositivos tipo A<br>
+                            <span class="variable-badge">y</span> = dispositivos tipo B
+                        </div>
+                    </div>
+
+                    <div class="problem-section">
+                        <div class="section-label">Restricciones:</div>
+                        <div class="section-content">
+                            <ul class="restrictions-list">
+                                <li><span class="variable-badge">5x + 10y ≤ 50</span> (componentes)</li>
+                                <li>Simplificado: <span class="variable-badge">x + 2y ≤ 10</span></li>
+                                <li><span class="variable-badge">x ≥ 0, y ≥ 0</span> (no negatividad)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="problem-section">
+                        <div class="section-label">Función Objetivo:</div>
+                        <div class="section-content">
+                            <span class="variable-badge">Z = 200x + 350y</span> (maximizar ganancia)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Código Python -->
+        <section class="code-section">
+            <h2 class="code-title">
+                <span>💻</span>
+                Código Python para Graficar Restricciones
+            </h2>
+            <div style="position: relative;">
+                <button class="copy-button" onclick="copyCode()">
+                    📋 Copiar Código
+                </button>
+                <pre id="codeBlock"><code>def graficar_lineas_ascii():
+    try:
+        restric1 = input("Ingrese la primera restricción (ej: x+y<=15): ").replace(" ", "")
+        restric2 = input("Ingrese la segunda restricción (ej: 3x+5y<=20): ").replace(" ", "")
+        
+        def parse_restric(eq):
+            # Detectar vertical (x=...)
+            if eq.startswith("x<=") or eq.startswith("x>=") or eq.startswith("x="):
+                num = float(eq.split("=")[1])
+                return "vertical", num
+            
+            # Detectar horizontal (y=...)
+            if eq.startswith("y<=") or eq.startswith("y>=") or eq.startswith("y="):
+                num = float(eq.split("=")[1])
+                return "horizontal", num
+            
+            # Caso general ax + by + c = 0
+            if 'x' not in eq and 'y' not in eq:
+                raise ValueError("Ecuación inválida.")
+            
+            # Separar en lados izquierdo y derecho
+            if "<=" in eq:
+                lhs, rhs = eq.split("<=")
+            elif ">=" in eq:
+                lhs, rhs = eq.split(">=")
+            elif "=" in eq:
+                lhs, rhs = eq.split("=")
+            else:
+                raise ValueError("Restricción no válida.")
+            
+            rhs = float(rhs)
+            a, b = 0, 0
+            for part in lhs.replace("-", "+-").split("+"):
+                if part == "":
+                    continue
+                if "x" in part:
+                    coef = part.replace("x", "")
+                    a = 1 if coef in ("", "+") else -1 if coef == "-" else float(coef)
+                elif "y" in part:
+                    coef = part.replace("y", "")
+                    b = 1 if coef in ("", "+") else -1 if coef == "-" else float(coef)
+            
+            return "normal", (a, b, rhs)
+        
+        tipo1, datos1 = parse_restric(restric1)
+        tipo2, datos2 = parse_restric(restric2)
+        
+        print("\nLeyenda:\n * = R1\n o = R2\n # = Intersección\n | = Eje Y\n - = Eje X\n + = Origen")
+        
+        for y in range(15, -16, -1):
+            linea = ""
+            for x in range(-15, 16):
+                def cumple(tipo, datos):
+                    if tipo == "vertical":
+                        return x == datos
+                    elif tipo == "horizontal":
+                        return y == datos
+                    else:
+                        a, b, c = datos
+                        if b != 0:
+                            y_calc = (c - a * x) / b
+                            return round(y_calc) == y
+                        elif a != 0:
+                            x_calc = c / a
+                            return round(x_calc) == x
+                        return False
+                
+                on_r1 = cumple(tipo1, datos1)
+                on_r2 = cumple(tipo2, datos2)
+                
+                if on_r1 and on_r2:
+                    linea += "#"
+                elif on_r1:
+                    linea += "*"
+                elif on_r2:
+                    linea += "o"
+                elif x == 0 and y == 0:
+                    linea += "+"
+                elif x == 0:
+                    linea += "|"
+                elif y == 0:
+                    linea += "-"
+                else:
+                    linea += " "
+            print(linea)
+    
+    except (ValueError, IndexError):
+        print("\nError: La restricción ingresada no es válida.")
+
+graficar_lineas_ascii()</code></pre>
+            </div>
+        </section>
+    </div>
+
+    <footer style="padding: 2rem 0; text-align: center; border-top: 2px solid rgba(59, 130, 246, 0.2); margin-top: 4rem;">
+        <div class="container">
+            <p style="color: var(--text-muted);">© 2025 Portafolio Programación Numérica - Anthony Rusbel Puma Huanca</p>
+        </div>
+    </footer>
+
+  <script src="..//Archivos JS/restricciones.js"></script>
+</body>
+</html>

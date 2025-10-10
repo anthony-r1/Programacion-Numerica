@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Numéricos - Programación Numérica</title>
+    
+  <link rel="stylesheet" href="../Archivos css/metodos_num.css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="unidad1.html" class="back-button" onclick="history.back(); return false;">← Volver</a>
+                <h1 class="header-title">Métodos Numéricos</h1>
+                <div class="student-info">
+                    <span class="info-badge">👨‍🎓 Anthony Rusbel Puma Huanca</span>
+                    <span class="info-badge">📋 Código: 240132</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">📐</div>
+            <h1 class="hero-title">Métodos Numéricos</h1>
+            <p class="hero-subtitle">Para Hallar Raíces de Ecuaciones</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- INTRODUCCIÓN -->
+        <section class="intro-section">
+            <div class="intro-card">
+                <h2 class="intro-title">
+                    <span>💡</span>
+                    ¿Por qué y para qué sirven?
+                </h2>
+                <div class="intro-content">
+                    <p>
+                        Los métodos numéricos son esenciales porque muchísimas ecuaciones en la ciencia y la ingeniería son
+                        imposibles de resolver "a mano" (analíticamente). En lugar de buscar una solución exacta, buscamos
+                        una aproximación lo más cercana posible a la raíz de <strong>f(x) = 0</strong>.
+                    </p>
+                    
+                    <div class="intro-list">
+                        <ul>
+                            <li><strong>Problema:</strong> Hallar el valor de x que hace que la función f(x) valga cero.</li>
+                            <li><strong>Idea Clave:</strong> Usar pasos iterativos para acercarse progresivamente a la solución.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0;">Aplicaciones Prácticas</h3>
+                    <table class="applications-table">
+                        <thead>
+                            <tr>
+                                <th>Aplicación</th>
+                                <th>Función f(x) = 0 Implícita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ingeniería</strong></td>
+                                <td>Determinar el punto de equilibrio de una estructura.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Finanzas</strong></td>
+                                <td>Calcular la tasa de interés (r) de una inversión, donde VAN(r) = 0.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Machine Learning</strong></td>
+                                <td>Encontrar el parámetro λ que minimiza el error (dE/dλ = 0).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTODOS -->
+        <section>
+            <div class="methods-grid">
+                <!-- Método 1: Bisección -->
+                <div class="method-card" onclick="navigateToMethod('biseccion')">
+                    <div class="method-header">
+                        <div class="method-number">1</div>
+                        <div>
+                            <h3 class="method-title">Método de Bisección</h3>
+                            <p class="method-subtitle">El que nunca falla</p>
+                        </div>
+                    </div>
+                    
+                    <p class="method-description">
+                        Es el método más robusto y seguro. Si la raíz está entre a y b (por el cambio de signo), 
+                        cortas el intervalo a la mitad y descartas la mitad donde no hay cambio de signo.
+                    </p>
+                    
+                    <div class="method-tags">
+                        <span class="tag tag-robust">🛡️ Robusto</span>
+                        <span class="tag tag-speed">📊 Convergencia Lineal</span>
+                    </div>
+                    
+                    <div class="method-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Convergencia:</span>
+                            <span class="stat-value">Lineal (ρ = 1/2)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Requiere:</span>
+                            <span class="stat-value">Intervalo [a, b]</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Palabra Clave:</span>
+                            <span class="stat-value">Intervalo cerrado</span>
+                        </div>
+                    </div>
+                    
+                    <button class="view-details-btn">
+                        Ver Detalles
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Método 2: Newton-Raphson -->
+                <div class="method-card" onclick="navigateToMethod('newton')">
+                    <div class="method-header">
+                        <div class="method-number">2</div>
+                        <div>
+                            <h3 class="method-title">Newton-Raphson</h3>
+                            <p class="method-subtitle">El veloz y arriesgado</p>
+                        </div>
+                    </div>
+                    
+                    <p class="method-description">
+                        El más rápido si la aproximación inicial es buena. Empiezas en xₙ, trazas una línea tangente 
+                        a la curva, y el cruce de esa tangente con el eje x es tu siguiente aproximación.
+                    </p>
+                    
+                    <div class="method-tags">
+                        <span class="tag tag-speed">⚡ Muy Rápido</span>
+                        <span class="tag tag-risk">⚠️ Requiere Derivada</span>
+                    </div>
+                    
+                    <div class="method-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Convergencia:</span>
+                            <span class="stat-value">Cuadrática (p = 2)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Requiere:</span>
+                            <span class="stat-value">f'(x) ≠ 0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Palabra Clave:</span>
+                            <span class="stat-value">Derivada</span>
+                        </div>
+                    </div>
+                    
+                    <button class="view-details-btn">
+                        Ver Detalles
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Método 3: Secante -->
+                <div class="method-card" onclick="navigateToMethod('secante')">
+                    <div class="method-header">
+                        <div class="method-number">3</div>
+                        <div>
+                            <h3 class="method-title">Método de la Secante</h3>
+                            <p class="method-subtitle">El pragmático sin derivada</p>
+                        </div>
+                    </div>
+                    
+                    <p class="method-description">
+                        Una mejora de Newton-Raphson cuando el cálculo de la derivada es difícil. Usa dos puntos 
+                        anteriores y traza una secante para aproximar la derivada.
+                    </p>
+                    
+                    <div class="method-tags">
+                        <span class="tag tag-speed">🚀 Rápido</span>
+                        <span class="tag tag-balanced">✓ Sin Derivada</span>
+                    </div>
+                    
+                    <div class="method-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Convergencia:</span>
+                            <span class="stat-value">Superlineal (p ≈ 1.618)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Requiere:</span>
+                            <span class="stat-value">Dos puntos iniciales</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Palabra Clave:</span>
+                            <span class="stat-value">Aproximación</span>
+                        </div>
+                    </div>
+                    
+                    <button class="view-details-btn">
+                        Ver Detalles
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Método 4: Punto Fijo -->
+                <div class="method-card" onclick="navigateToMethod('punto-fijo')">
+                    <div class="method-header">
+                        <div class="method-number">4</div>
+                        <div>
+                            <h3 class="method-title">Método de Punto Fijo</h3>
+                            <p class="method-subtitle">La iteración simple</p>
+                        </div>
+                    </div>
+                    
+                    <p class="method-description">
+                        Transforma f(x) = 0 en una iteración: xₙ₊₁ = g(xₙ). Si la función g(x) es "suave", 
+                        la secuencia convergerá al punto donde x = g(x).
+                    </p>
+                    
+                    <div class="method-tags">
+                        <span class="tag tag-balanced">🔄 Iterativo</span>
+                        <span class="tag tag-risk">⚠️ Condición |g'(x)| < 1</span>
+                    </div>
+                    
+                    <div class="method-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Convergencia:</span>
+                            <span class="stat-value">Lineal</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Requiere:</span>
+                            <span class="stat-value">|g'(x)| < 1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Palabra Clave:</span>
+                            <span class="stat-value">Transformación x = g(x)</span>
+                        </div>
+                    </div>
+                    
+                    <button class="view-details-btn">
+                        Ver Detalles
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Método 5: Regula Falsi -->
+                <div class="method-card" onclick="navigateToMethod('regula-falsi')">
+                    <div class="method-header">
+                        <div class="method-number">5</div>
+                        <div>
+                            <h3 class="method-title">Regula Falsi</h3>
+                            <p class="method-subtitle">Falsa Posición</p>
+                        </div>
+                    </div>
+                    
+                    <p class="method-description">
+                        Un híbrido entre Bisección y Secante. Usa una línea secante para encontrar una aproximación 
+                        rápida, pero mantiene siempre un intervalo seguro con la raíz.
+                    </p>
+                    
+                    <div class="method-tags">
+                        <span class="tag tag-robust">🛡️ Robusto</span>
+                        <span class="tag tag-speed">⚡ Rápido</span>
+                    </div>
+                    
+                    <div class="method-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Convergencia:</span>
+                            <span class="stat-value">Variable</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Requiere:</span>
+                            <span class="stat-value">Intervalo [a, b]</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Palabra Clave:</span>
+                            <span class="stat-value">Robustez y Velocidad</span>
+                        </div>
+                    </div>
+                    
+                    <button class="view-details-btn">
+                        Ver Detalles
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="padding: 2rem 0; text-align: center; border-top: 2px solid rgba(59, 130, 246, 0.2); margin-top: 4rem;">
+        <div class="container">
+            <p style="color: var(--text-muted);">© 2025 Portafolio Programación Numérica - Anthony Rusbel Puma Huanca</p>
+        </div>
+    </footer>
+
+
+  <script src="../Archivos JS/metodos_num.js"></script>
+</body>

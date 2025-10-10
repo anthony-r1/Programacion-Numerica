@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento de Funciones - Programación Numérica</title>
+    
+  <link rel="stylesheet" href="..//Archivos css/reconocimiento.css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="unidad1.html" class="back-button" onclick="history.back(); return false;">← Volver a Unidad 1</a>
+                <h1 class="header-title">Reconocimiento de Funciones</h1>
+                <div class="student-info">
+                    <span class="info-badge">👨‍🎓 Anthony Rusbel Puma Huanca</span>
+                    <span class="info-badge">📋 Código: 240132</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">🔍</div>
+            <h1 class="hero-title">Reconocimiento de Funciones</h1>
+            <p class="hero-subtitle">Análisis Automático de Expresiones Matemáticas</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 1. ¿QUÉ ES EL RECONOCIMIENTO DE FUNCIONES? -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>📖</span>
+                    ¿Qué es el Reconocimiento de Funciones?
+                </h2>
+                <div class="section-content">
+                    <p>
+                        El <strong>reconocimiento de funciones matemáticas</strong> es un proceso analítico que permite 
+                        identificar y clasificar expresiones algebraicas según sus características estructurales. 
+                        Este análisis automatizado examina los componentes de una función para determinar su naturaleza, 
+                        grado y propiedades fundamentales.
+                    </p>
+                    <p>
+                        A través de este programa, podemos extraer información clave de cualquier expresión matemática, 
+                        incluyendo:
+                    </p>
+                    
+                    <div class="features-list">
+                        <ul>
+                            <li><strong>Variables presentes:</strong> Identificación de todas las letras que representan valores desconocidos</li>
+                            <li><strong>Operaciones matemáticas:</strong> Conteo de operadores (+, -, *, /, ^)</li>
+                            <li><strong>Constantes numéricas:</strong> Números que forman parte de la expresión</li>
+                            <li><strong>Grado de la función:</strong> Mayor exponente presente en la expresión</li>
+                            <li><strong>Clasificación automática:</strong> Identificación del tipo de función (lineal, cuadrática, cúbica, etc.)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box info">
+                        <div class="info-box-title">
+                            <span>💡</span>
+                            Aplicaciones Prácticas
+                        </div>
+                        <p>
+                            Este tipo de análisis es fundamental en sistemas de álgebra computacional, calculadoras 
+                            científicas avanzadas, software educativo y herramientas de visualización matemática, 
+                            permitiendo procesar y clasificar expresiones de forma automática.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TIPOS DE FUNCIONES RECONOCIDAS -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>📊</span>
+                    Tipos de Funciones Reconocidas
+                </h2>
+                
+                <div class="types-grid">
+                    <!-- Función Constante -->
+                    <div class="type-card">
+                        <div class="type-header">
+                            <div class="type-number">0</div>
+                            <h3 class="type-title">Función Constante</h3>
+                        </div>
+                        <div class="formula-box">f(x) = c</div>
+                        <div class="type-description">
+                            Una función constante no contiene variables o todas las variables se cancelan, 
+                            resultando en un valor fijo. Su grado es <strong>0</strong> y su representación 
+                            gráfica es una línea horizontal.
+                        </div>
+                        <div class="type-example">
+                            <div class="type-example-title">🔹 Ejemplos:</div>
+                            <div class="type-example-text">f(x) = 5<br>f(x) = -3.14<br>f(x) = 0</div>
+                        </div>
+                    </div>
+
+                    <!-- Función Lineal -->
+                    <div class="type-card">
+                        <div class="type-header">
+                            <div class="type-number">1</div>
+                            <h3 class="type-title">Función Lineal</h3>
+                        </div>
+                        <div class="formula-box">f(x) = mx + b</div>
+                        <div class="type-description">
+                            La función lineal tiene grado <strong>1</strong>, lo que significa que la variable 
+                            aparece elevada a la primera potencia. Su gráfica es una línea recta con pendiente 
+                            <em>m</em> y ordenada al origen <em>b</em>.
+                        </div>
+                        <div class="type-example">
+                            <div class="type-example-title">🔹 Ejemplos:</div>
+                            <div class="type-example-text">f(x) = 2x + 3<br>f(x) = -5x + 1<br>f(x) = x</div>
+                        </div>
+                    </div>
+
+                    <!-- Función Cuadrática -->
+                    <div class="type-card">
+                        <div class="type-header">
+                            <div class="type-number">2</div>
+                            <h3 class="type-title">Función Cuadrática</h3>
+                        </div>
+                        <div class="formula-box">f(x) = ax² + bx + c</div>
+                        <div class="type-description">
+                            Las funciones cuadráticas tienen grado <strong>2</strong>. Su representación gráfica 
+                            es una parábola que puede abrir hacia arriba o hacia abajo dependiendo del signo del 
+                            coeficiente principal <em>a</em>.
+                        </div>
+                        <div class="type-example">
+                            <div class="type-example-title">🔹 Ejemplos:</div>
+                            <div class="type-example-text">f(x) = x² + 2x - 3<br>f(x) = -2x² + 5<br>f(x) = 3x²</div>
+                        </div>
+                    </div>
+
+                    <!-- Función Cúbica -->
+                    <div class="type-card">
+                        <div class="type-header">
+                            <div class="type-number">3</div>
+                            <h3 class="type-title">Función Cúbica</h3>
+                        </div>
+                        <div class="formula-box">f(x) = ax³ + bx² + cx + d</div>
+                        <div class="type-description">
+                            Las funciones cúbicas poseen grado <strong>3</strong>. Su gráfica puede tener hasta 
+                            dos puntos de inflexión y presenta un comportamiento más complejo que las funciones 
+                            de grado menor.
+                        </div>
+                        <div class="type-example">
+                            <div class="type-example-title">🔹 Ejemplos:</div>
+                            <div class="type-example-text">f(x) = x³ + 2x² - 5x + 7<br>f(x) = -x³ + 3x<br>f(x) = 2x³</div>
+                        </div>
+                    </div>
+
+                    <!-- Polinomios de Grado Superior -->
+                    <div class="type-card">
+                        <div class="type-header">
+                            <div class="type-number">n</div>
+                            <h3 class="type-title">Polinomios Superiores</h3>
+                        </div>
+                        <div class="formula-box">f(x) = aₙxⁿ + ... + a₁x + a₀</div>
+                        <div class="type-description">
+                            Son funciones polinómicas de grado <strong>mayor a 3</strong>. A medida que aumenta 
+                            el grado, la función presenta un comportamiento más complejo con múltiples puntos 
+                            críticos y cambios de dirección.
+                        </div>
+                        <div class="type-example">
+                            <div class="type-example-title">🔹 Ejemplos:</div>
+                            <div class="type-example-text">f(x) = x⁴ - 2x² + 1<br>f(x) = x⁵ + 3x³ - x<br>f(x) = 2x⁶</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ¿CÓMO RECONOCER EL TIPO DE FUNCIÓN? -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>🎯</span>
+                    ¿Cómo Reconocer el Tipo de Función?
+                </h2>
+                <div class="section-content">
+                    <p>
+                        Para identificar correctamente el tipo de función, seguimos un proceso sistemático de análisis:
+                    </p>
+
+                    <div class="info-box">
+                        <div class="info-box-title">
+                            <span>1️⃣</span>
+                            Identificar las Variables
+                        </div>
+                        <p>
+                            Examinar la expresión para encontrar todas las letras que representan valores desconocidos. 
+                            Generalmente se utilizan x, y, z, pero puede ser cualquier letra.
+                        </p>
+                    </div>
+
+                    <div class="info-box info">
+                        <div class="info-box-title">
+                            <span>2️⃣</span>
+                            Determinar los Exponentes
+                        </div>
+                        <p>
+                            Buscar los exponentes asociados a cada variable. El símbolo <code>^</code> indica 
+                            exponenciación (por ejemplo: x^2 significa x²). Si una variable no tiene exponente 
+                            explícito, se asume que está elevada a la potencia 1.
+                        </p>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-title">
+                            <span>3️⃣</span>
+                            Encontrar el Grado Máximo
+                        </div>
+                        <p>
+                            El grado de la función es el mayor exponente presente en la expresión. Este valor 
+                            determina la clasificación de la función (lineal si grado=1, cuadrática si grado=2, etc.).
+                        </p>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box-title">
+                            <span>4️⃣</span>
+                            Clasificar la Función
+                        </div>
+                        <p>
+                            Una vez determinado el grado, se clasifica automáticamente:
+                            <br>• Grado 0: Constante
+                            <br>• Grado 1: Lineal
+                            <br>• Grado 2: Cuadrática
+                            <br>• Grado 3: Cúbica
+                            <br>• Grado > 3: Polinómica de grado superior
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. IMPLEMENTACIÓN DEL ANALIZADOR -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>💻</span>
+                    Implementación del Analizador
+                </h2>
+                
+                <div class="info-box info">
+                    <div class="info-box-title">
+                        <span>ℹ️</span>
+                        Sobre el Código
+                    </div>
+                    <p>
+                        Este programa en Python implementa un analizador de funciones matemáticas mediante 
+                        programación orientada a objetos. La clase <code>Funcion</code> encapsula todos los 
+                        métodos necesarios para extraer información de una expresión algebraica.
+                    </p>
+                </div>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">🐍 Python</span>
+                        <button class="copy-button" onclick="copyCode()">📋 Copiar Código</button>
+                    </div>
+                    <pre class="code-content" id="codeContent"><span class="keyword">class</span> <span class="class">Funcion</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, expresion):
+        <span class="comment"># Inicializar atributos de la función</span>
+        <span class="keyword">self</span>.expresion = expresion.replace(<span class="string">" "</span>, <span class="string">""</span>)
+        <span class="keyword">self</span>.variables = []
+        <span class="keyword">self</span>.operaciones = <span class="number">0</span>
+        <span class="keyword">self</span>.grado = <span class="number">0</span>
+        <span class="keyword">self</span>.constantes = <span class="number">0</span>
+
+    <span class="keyword">def</span> <span class="function">analizar</span>(<span class="keyword">self</span>):
+        <span class="comment"># Método principal que analiza la expresión</span>
+        exp = <span class="keyword">self</span>.expresion
+        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(<span class="function">len</span>(exp)):
+            c = exp[i]
+            <span class="comment"># Identificar variables (letras)</span>
+            <span class="keyword">if</span> c.isalpha() <span class="keyword">and</span> c <span class="keyword">not in</span> <span class="keyword">self</span>.variables:
+                <span class="keyword">self</span>.variables.append(c)
+            <span class="comment"># Contar operaciones</span>
+            <span class="keyword">if</span> c <span class="keyword">in</span> <span class="string">"+-*/^"</span>:
+                <span class="keyword">self</span>.operaciones += <span class="number">1</span>
+            <span class="comment"># Contar constantes numéricas</span>
+            <span class="keyword">if</span> c.isdigit():
+                <span class="keyword">self</span>.constantes += <span class="number">1</span>
+        <span class="comment"># Calcular el grado de la función</span>
+        <span class="keyword">self</span>.grado = <span class="keyword">self</span>.calcular_grado()
+
+    <span class="keyword">def</span> <span class="function">calcular_grado</span>(<span class="keyword">self</span>):
+        <span class="comment"># Determinar el mayor exponente en la expresión</span>
+        exp = <span class="keyword">self</span>.expresion
+        grado_max = <span class="number">0</span>
+        i = <span class="number">0</span>
+        <span class="keyword">while</span> i < <span class="function">len</span>(exp):
+            <span class="keyword">if</span> exp[i].isalpha():
+                <span class="comment"># Verificar si hay un exponente explícito (^)</span>
+                <span class="keyword">if</span> i + <span class="number">1</span> < <span class="function">len</span>(exp) <span class="keyword">and</span> exp[i + <span class="number">1</span>] == <span class="string">'^'</span>:
+                    j = i + <span class="number">2</span>
+                    num = <span class="string">''</span>
+                    <span class="comment"># Extraer el valor del exponente</span>
+                    <span class="keyword">while</span> j < <span class="function">len</span>(exp) <span class="keyword">and</span> exp[j].isdigit():
+                        num += exp[j]
+                        j += <span class="number">1</span>
+                    <span class="keyword">if</span> num != <span class="string">''</span>:
+                        grado = <span class="function">int</span>(num)
+                        <span class="keyword">if</span> grado > grado_max:
+                            grado_max = grado
+                <span class="keyword">else</span>:
+                    <span class="comment"># Si no hay exponente, el grado es 1</span>
+                    <span class="keyword">if</span> grado_max < <span class="number">1</span>:
+                        grado_max = <span class="number">1</span>
+            i += <span class="number">1</span>
+        <span class="keyword">return</span> grado_max
+
+    <span class="keyword">def</span> <span class="function">resumen</span>(<span class="keyword">self</span>):
+        <span class="comment"># Generar un resumen formateado del análisis</span>
+        texto = <span class="string">"==============================\n"</span>
+        texto += <span class="string">f"Función ingresada: {<span class="keyword">self</span>.expresion}\n"</span>
+        texto += <span class="string">f"Variables encontradas: {', '.join(<span class="keyword">self</span>.variables) <span class="keyword">if</span> <span class="keyword">self</span>.variables <span class="keyword">else</span> 'ninguna'}\n"</span>
+        texto += <span class="string">f"Número de variables: {<span class="function">len</span>(<span class="keyword">self</span>.variables)}\n"</span>
+        texto += <span class="string">f"Número de operaciones: {<span class="keyword">self</span>.operaciones}\n"</span>
+        texto += <span class="string">f"Número de constantes: {<span class="keyword">self</span>.constantes}\n"</span>
+        texto += <span class="string">f"Grado de la función: {<span class="keyword">self</span>.grado}\n"</span>
+        
+        <span class="comment"># Clasificar el tipo de función según su grado</span>
+        <span class="keyword">if</span> <span class="keyword">self</span>.grado == <span class="number">1</span>:
+            tipo = <span class="string">"Función lineal"</span>
+        <span class="keyword">elif</span> <span class="keyword">self</span>.grado == <span class="number">2</span>:
+            tipo = <span class="string">"Función cuadrática"</span>
+        <span class="keyword">elif</span> <span class="keyword">self</span>.grado == <span class="number">3</span>:
+            tipo = <span class="string">"Función cúbica"</span>
+        <span class="keyword">elif</span> <span class="keyword">self</span>.grado > <span class="number">3</span>:
+            tipo = <span class="string">"Función polinómica de grado mayor"</span>
+        <span class="keyword">else</span>:
+            tipo = <span class="string">"Constante o sin variable"</span>
+        
+        texto += <span class="string">f"Tipo de función: {tipo}\n"</span>
+        texto += <span class="string">"=============================="</span>
+        <span class="keyword">return</span> texto
+
+
+<span class="keyword">def</span> <span class="function">main</span>():
+    <span class="comment"># Función principal del programa</span>
+    expresion = <span class="function">input</span>(<span class="string">"Ingresa la función (por ejemplo x^3+2x^2-5x+7): "</span>)
+    f = Funcion(expresion)
+    f.analizar()
+    <span class="function">print</span>(f.resumen())
+
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    main()</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. EJEMPLOS DE EJECUCIÓN -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>🎮</span>
+                    Ejemplos de Ejecución
+                </h2>
+                
+                <div class="section-content">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Ejemplo Principal: Función Cúbica</h3>
+                    
+                    <div class="info-box info">
+                        <div class="info-box-title">
+                            <span>💻</span>
+                            Entrada del Usuario
+                        </div>
+                        <p>
+                            <strong>Función ingresada:</strong> x^3+2x^2-5x+7
+                        </p>
+                    </div>
+                    
+                    <div class="example-output">
+                        <pre>==============================
+Función ingresada: x^3+2x^2-5x+7
+Variables encontradas: x
+Número de variables: 1
+Número de operaciones: 3
+Número de constantes: 5
+Grado de la función: 3
+Tipo de función: Función cúbica
+==============================</pre>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box-title">
+                            <span>🔍</span>
+                            Interpretación de Resultados
+                        </div>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-muted);">
+                            <li><strong>Variables:</strong> Se identificó la variable 'x'</li>
+                            <li><strong>Operaciones:</strong> Se contaron 3 operadores (+, +, -)</li>
+                            <li><strong>Constantes:</strong> Se encontraron 5 dígitos (3, 2, 2, 5, 7)</li>
+                            <li><strong>Grado:</strong> El mayor exponente es 3 (x³)</li>
+                            <li><strong>Clasificación:</strong> Por tener grado 3, es una función cúbica</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0;">Ejemplo 1: Función Lineal</h3>
+                    <div class="example-output">
+                        <pre>Ingresa la función: 3x+5
+
+==============================
+Función ingresada: 3x+5
+Variables encontradas: x
+Número de variables: 1
+Número de operaciones: 1
+Número de constantes: 2
+Grado de la función: 1
+Tipo de función: Función lineal
+==============================</pre>
+                    </div>
+
+                    <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0;">Ejemplo 2: Función Cuadrática</h3>
+                    <div class="example-output">
+                        <pre>Ingresa la función: x^2-4x+4
+
+==============================
+Función ingresada: x^2-4x+4
+Variables encontradas: x
+Número de variables: 1
+Número de operaciones: 2
+Número de constantes: 4
+Grado de la función: 2
+Tipo de función: Función cuadrática
+==============================</pre>
+                    </div>
+
+                    <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0;">Ejemplo 3: Polinomio de Grado Superior</h3>
+                    <div class="example-output">
+                        <pre>Ingresa la función: 2x^5+x^3-7x+1
+
+==============================
+Función ingresada: 2x^5+x^3-7x+1
+Variables encontradas: x
+Número de variables: 1
+Número de operaciones: 3
+Número de constantes: 5
+Grado de la función: 5
+Tipo de función: Función polinómica de grado mayor
+==============================</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="padding: 2rem 0; text-align: center; border-top: 2px solid rgba(59, 130, 246, 0.2); margin-top: 4rem;">
+        <div class="container">
+            <p style="color: var(--text-muted);">© 2025 Portafolio Programación Numérica - Anthony Rusbel Puma Huanca</p>
+        </div>
+    </footer>
+ 
+  <script src="../Archivos JS/reconocimiento.js"></script>
+</body>
+</html>

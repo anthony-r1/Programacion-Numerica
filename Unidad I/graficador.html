@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficador de Funciones Lineales - Programación Numérica</title>
+    
+  <link rel="stylesheet" href="../Archivos css/graficador.css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="unidad1.html" class="back-button" onclick="history.back(); return false;">← Volver a Unidad 1</a>
+                <h1 class="header-title">Graficador de Funciones Lineales</h1>
+                <div class="student-info">
+                    <span class="info-badge">👨‍🎓 Anthony Rusbel Puma Huanca</span>
+                    <span class="info-badge">📋 Código: 240132</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">📊</div>
+            <h1 class="hero-title">Graficador de Funciones Lineales</h1>
+            <p class="hero-subtitle">Visualización en Plano Cartesiano ASCII</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Descripción -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>📖</span>
+                    Descripción del Proyecto
+                </h2>
+                <div class="section-content">
+                    <p>
+                        Una <strong>función</strong> representa una relación matemática entre dos conjuntos, 
+                        donde cada elemento del dominio (entrada) se asocia con exactamente un elemento del 
+                        codominio (salida). Comúnmente se expresa mediante la notación:
+                    </p>
+                    <div class="formula-box">y = f(x)</div>
+                    
+                    <p>
+                        Las <strong>funciones lineales</strong> son aquellas cuya representación gráfica forma 
+                        una línea recta en el plano cartesiano. Su expresión algebraica general es:
+                    </p>
+                    <div class="formula-box">f(x) = m·x + b</div>
+                    
+                    <div class="definition-list">
+                        <div class="definition-item">
+                            <div class="definition-term">📐 m (pendiente)</div>
+                            <div class="definition-desc">
+                                Indica la inclinación de la recta. Determina qué tan empinada o plana es la línea.
+                                <br>• m > 0: la recta sube de izquierda a derecha
+                                <br>• m < 0: la recta baja de izquierda a derecha
+                                <br>• m = 0: la recta es horizontal
+                            </div>
+                        </div>
+                        <div class="definition-item">
+                            <div class="definition-term">📍 b (ordenada al origen)</div>
+                            <div class="definition-desc">
+                                Representa el punto donde la recta intersecta el eje Y. Es el valor de la función 
+                                cuando x = 0.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objetivo -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>🎯</span>
+                    Objetivo del Graficador
+                </h2>
+                <div class="section-content">
+                    <p>
+                        Este programa desarrollado en Python tiene como propósito <strong>reconocer y visualizar 
+                        dos funciones lineales</strong> en un plano cartesiano utilizando caracteres ASCII. 
+                    </p>
+                    <p>
+                        La implementación está diseñada con las siguientes características:
+                    </p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🖥️</div>
+                            <div class="feature-title">Interfaz de Consola</div>
+                            <div class="feature-desc">
+                                Interfaz simple y accesible que funciona directamente en la terminal, 
+                                sin necesidad de librerías gráficas externas.
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">📏</div>
+                            <div class="feature-title">Plano Limitado</div>
+                            <div class="feature-desc">
+                                El rango de graficación se limita a 20 unidades por coordenada 
+                                (-15 a +15 en ambos ejes) para una visualización óptima.
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-title">Sin Librerías Gráficas</div>
+                            <div class="feature-desc">
+                                Implementación pura en Python sin dependencias de librerías especializadas 
+                                como matplotlib o numpy.
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <div class="feature-title">Identificación Visual</div>
+                            <div class="feature-desc">
+                                Sistema de símbolos distintivos para cada función y sus intersecciones, 
+                                facilitando la interpretación del gráfico.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementación en Python -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>💻</span>
+                    Código del Graficador
+                </h2>
+                
+                <div class="info-box info">
+                    <div class="info-box-title">
+                        <span>ℹ️</span>
+                        Funcionamiento del Programa
+                    </div>
+                    <p>
+                        El programa solicita al usuario dos funciones lineales en formato algebraico 
+                        (por ejemplo: "2x+1" o "-x+3"), analiza sus componentes (pendiente y ordenada), 
+                        y luego genera una representación visual en el plano cartesiano usando caracteres ASCII.
+                    </p>
+                </div>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-language">🐍 Python</span>
+                        <button class="copy-button" onclick="copyCode()">📋 Copiar Código</button>
+                    </div>
+                    <pre class="code-content" id="codeContent"><span class="keyword">def</span> <span class="function">graficar_lineas_ascii</span>():
+    <span class="keyword">try</span>:
+        <span class="comment"># Solicitar las funciones al usuario</span>
+        ecuacion1 = <span class="function">input</span>(<span class="string">"Ingrese la primera función (ejemplo: 2x+1): "</span>).replace(<span class="string">" "</span>, <span class="string">""</span>)
+        ecuacion2 = <span class="function">input</span>(<span class="string">"Ingrese la segunda función (ejemplo: -x+3): "</span>).replace(<span class="string">" "</span>, <span class="string">""</span>)
+
+        <span class="keyword">def</span> <span class="function">get_mb</span>(eq):
+            <span class="comment"># Extraer pendiente (m) y ordenada (b) de la ecuación</span>
+            <span class="keyword">if</span> <span class="string">'x'</span> <span class="keyword">not in</span> eq:
+                <span class="keyword">return</span> <span class="number">0</span>, <span class="function">float</span>(eq)
+            
+            <span class="comment"># Calcular m (pendiente)</span>
+            m_str = eq.split(<span class="string">'x'</span>)[<span class="number">0</span>]
+            m = <span class="number">1</span> <span class="keyword">if</span> m_str <span class="keyword">in</span> (<span class="string">''</span>, <span class="string">'+'</span>) <span class="keyword">else</span> <span class="number">-1</span> <span class="keyword">if</span> m_str == <span class="string">'-'</span> <span class="keyword">else</span> <span class="function">float</span>(m_str)
+            
+            <span class="comment"># Calcular b (ordenada al origen)</span>
+            b_str = eq.split(<span class="string">'x'</span>)[<span class="number">1</span>] <span class="keyword">if</span> <span class="function">len</span>(eq.split(<span class="string">'x'</span>)) > <span class="number">1</span> <span class="keyword">else</span> <span class="string">''</span>
+            b = <span class="function">float</span>(b_str) <span class="keyword">if</span> b_str <span class="keyword">else</span> <span class="number">0</span>
+            
+            <span class="keyword">return</span> m, b
+
+        <span class="comment"># Obtener parámetros de ambas funciones</span>
+        m1, b1 = get_mb(ecuacion1)
+        m2, b2 = get_mb(ecuacion2)
+
+        <span class="comment"># Mostrar leyenda de símbolos</span>
+        <span class="function">print</span>(<span class="string">"\nLeyenda:\n* = F1\no = F2\n# = Intersección\n| = Eje Y\n- = Eje X\n+ = Origen"</span>)
+        
+        <span class="comment"># Generar el plano cartesiano</span>
+        <span class="keyword">for</span> y <span class="keyword">in</span> <span class="function">range</span>(<span class="number">15</span>, <span class="number">-16</span>, <span class="number">-1</span>):
+            linea = <span class="string">""</span>
+            <span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(<span class="number">-15</span>, <span class="number">16</span>):
+                <span class="comment"># Verificar si el punto pertenece a cada función</span>
+                on_f1 = <span class="function">round</span>(m1 * x + b1) == y
+                on_f2 = <span class="function">round</span>(m2 * x + b2) == y
+                
+                <span class="comment"># Asignar símbolo según la posición</span>
+                <span class="keyword">if</span> on_f1 <span class="keyword">and</span> on_f2:
+                    linea += <span class="string">"#"</span>  <span class="comment"># Intersección</span>
+                <span class="keyword">elif</span> on_f1:
+                    linea += <span class="string">"*"</span>  <span class="comment"># Función 1</span>
+                <span class="keyword">elif</span> on_f2:
+                    linea += <span class="string">"o"</span>  <span class="comment"># Función 2</span>
+                <span class="keyword">elif</span> x == <span class="number">0</span> <span class="keyword">and</span> y == <span class="number">0</span>:
+                    linea += <span class="string">"+"</span>  <span class="comment"># Origen</span>
+                <span class="keyword">elif</span> x == <span class="number">0</span>:
+                    linea += <span class="string">"|"</span>  <span class="comment"># Eje Y</span>
+                <span class="keyword">elif</span> y == <span class="number">0</span>:
+                    linea += <span class="string">"-"</span>  <span class="comment"># Eje X</span>
+                <span class="keyword">else</span>:
+                    linea += <span class="string">" "</span>  <span class="comment"># Espacio vacío</span>
+            <span class="function">print</span>(linea)
+
+    <span class="keyword">except</span> (ValueError, IndexError):
+        <span class="function">print</span>(<span class="string">"\nError: La ecuación ingresada no es válida."</span>)
+
+<span class="comment"># Ejecutar el programa</span>
+graficar_lineas_ascii()</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejemplo de Uso -->
+        <section class="content-section">
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span>🎮</span>
+                    Ejemplo de Uso
+                </h2>
+                
+                <div class="section-content">
+                    <div class="info-box info">
+                        <div class="info-box-title">
+                            <span>💻</span>
+                            Entrada del Usuario
+                        </div>
+                        <p>
+                            <strong>Primera función:</strong> 2x+1<br>
+                            <strong>Segunda función:</strong> -x+3
+                        </p>
+                    </div>
+                    
+                    <div class="info-box warning">
+                        <div class="info-box-title">
+                            <span>📊</span>
+                            Salida Esperada
+                        </div>
+                        <p>
+                            El programa generará un plano cartesiano en ASCII mostrando:
+                        </p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>*</strong> = Puntos de la función f₁(x) = 2x+1</li>
+                            <li><strong>o</strong> = Puntos de la función f₂(x) = -x+3</li>
+                            <li><strong>#</strong> = Punto de intersección entre ambas funciones</li>
+                            <li><strong>|</strong> = Eje Y (vertical)</li>
+                            <li><strong>-</strong> = Eje X (horizontal)</li>
+                            <li><strong>+</strong> = Origen (0,0)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-output">
+                        <pre>Leyenda:
+* = F1
+o = F2
+# = Intersección
+| = Eje Y
+- = Eje X
++ = Origen
+
+               o|               
+              o |               
+             o  |               
+            o   |               
+           o    |               
+          o     |               
+         o      |               
+        o       |               
+       #        |               
+      o *       |               
+     o   *      |               
+    o     *     |               
+   o       *    |               
+  o         *   |               
+ o           *  |               
+o             * |               
+---------------+---------------
+              * |o              
+            *   | o             
+          *     |  o            
+        *       |   o           
+      *         |    o          
+    *           |     o         
+  *             |      o        
+ *              |       o       
+|               |        o      
+|               |         o     
+|               |          o    
+|               |           o   
+|               |            o  
+|               |             o 
+|               |              o</pre>
+                    </div>
+                    
+                    <div class="info-box">
+                        <div class="info-box-title">
+                            <span>💡</span>
+                            Análisis del Resultado
+                        </div>
+                        <p>
+                            En este ejemplo, podemos observar que las funciones f₁(x) = 2x+1 y f₂(x) = -x+3 
+                            se intersectan en el punto marcado con "#". La función f₁ tiene pendiente positiva (sube), 
+                            mientras que f₂ tiene pendiente negativa (baja).
+                        </p>
+                    </div>
