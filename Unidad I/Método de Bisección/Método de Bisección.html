@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Bisección - Programación Numérica</title>
+    <link rel="stylesheet" href="Método de Bisección.css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="back-button" onclick="history.back(); return false;">← Volver</a>
+                <h1 class="header-title">Método de Bisección</h1>
+                <div class="student-info">
+                    <span class="info-badge">📅 2 de octubre de 2025</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">📐</div>
+            <h1 class="hero-title">Método de Bisección</h1>
+            <p class="hero-subtitle">Procedimiento Numérico e Iterativo para Encontrar Raíces</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- DEFINICIÓN -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>💡</span>
+                    Definición del Método de Bisección
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    El método de bisección es un procedimiento numérico e iterativo que se utiliza para encontrar 
+                    una raíz de una función, es decir, un valor de x que hace que f(x) = 0. Este método se basa 
+                    en un principio sencillo: si una función continua cambia de signo en un intervalo cerrado [a, b], 
+                    entonces existe al menos una raíz dentro de ese intervalo.
+                </p>
+                
+                <div class="formula-box">
+                    f(a) · f(b) < 0  ⇒  ∃ ξ ∈ (a, b) : f(ξ) = 0
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1.5rem;">
+                    El método consiste en dividir repetidamente el intervalo por la mitad y elegir el subintervalo 
+                    en el que la función cambia de signo. Con cada iteración, el intervalo se hace más pequeño y 
+                    la aproximación a la raíz se vuelve más precisa.
+                </p>
+
+                <div style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid var(--tertiary-color); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--tertiary-color); margin-bottom: 1rem;">En Palabras Simples:</h3>
+                    <p style="color: var(--text-color);">
+                        El método de bisección es como un proceso de búsqueda donde se reduce el rango a la mitad 
+                        en cada paso, acercándose cada vez más al punto donde la función cruza el eje x.
+                    </p>
+                </div>
+
+                <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid var(--warning-color); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--warning-color); margin-bottom: 1rem;">Ejemplo Intuitivo:</h3>
+                    <p style="color: var(--text-color);">
+                        Si f(2) > 0 y f(5) < 0, significa que hay al menos una raíz entre 2 y 5. Calculamos el punto 
+                        medio c = (2+5)/2 = 3.5 y evaluamos f(3.5). Luego elegimos el nuevo intervalo donde ocurre 
+                        el cambio de signo y repetimos el proceso hasta aproximar la raíz con la precisión deseada.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCEDIMIENTO -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>🔧</span>
+                    Procedimiento
+                </h2>
+                
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <strong>Calcular el punto medio:</strong>
+                        <div class="formula-box" style="margin-top: 1rem;">
+                            m = (a + b) / 2
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <span class="step-number">2</span>
+                        <strong>Evaluar la función en f(a), f(b) y f(m)</strong>
+                    </div>
+
+                    <div class="step-item">
+                        <span class="step-number">3</span>
+                        <strong>Determinar el nuevo intervalo:</strong>
+                        <div style="margin-top: 1rem; color: var(--text-muted);">
+                            <p>• Si f(a) · f(m) < 0  ⇒  [a, m]</p>
+                            <p>• Si f(m) · f(b) < 0  ⇒  [m, b]</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <span class="step-number">4</span>
+                        <strong>Calcular el error:</strong>
+                        <div class="formula-box" style="margin-top: 1rem;">
+                            e = (b - a) / 2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJEMPLO -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>📊</span>
+                    Ejemplo: Función Exponencial
+                </h2>
+                
+                <div style="background: rgba(6, 182, 212, 0.1); border: 2px solid var(--secondary-color); border-radius: 15px; padding: 2rem; margin: 1.5rem 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Enunciado del Problema</h3>
+                    <p style="color: var(--text-color); line-height: 1.8;">
+                        Un ingeniero en control de procesos necesita calcular el tiempo x en horas que tarda en 
+                        estabilizarse la temperatura de un horno industrial. El comportamiento de la temperatura 
+                        se modela con la función:
+                    </p>
+                    <div class="formula-box">
+                        f(x) = e³ˣ - 4
+                    </div>
+                    <p style="color: var(--text-color); line-height: 1.8;">
+                        Se sabe que la raíz de la ecuación (cuando el horno alcanza el nivel de equilibrio) se 
+                        encuentra en el intervalo [0, 1]. Se pide aplicar el Método de Bisección hasta obtener 
+                        un error menor a 0.1.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITERACIONES -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>🔄</span>
+                    Iteraciones Paso a Paso
+                </h2>
+
+                <div class="iteration-card">
+                    <div class="iteration-title">Iteración 1</div>
+                    <p style="color: var(--text-muted);">
+                        m = 0.5, f(0) = -3, f(1) = 16.0855, f(0.5) = 0.4816<br>
+                        ⇒ [0, 0.5], e = 0.5
+                    </p>
+                </div>
+
+                <div class="iteration-card">
+                    <div class="iteration-title">Iteración 2</div>
+                    <p style="color: var(--text-muted);">
+                        m = 0.25, f(0.25) = -1.8829<br>
+                        ⇒ [0.25, 0.5], e = 0.25
+                    </p>
+                </div>
+
+                <div class="iteration-card">
+                    <div class="iteration-title">Iteración 3</div>
+                    <p style="color: var(--text-muted);">
+                        m = 0.375, f(0.375) = -0.919<br>
+                        ⇒ [0.375, 0.5], e = 0.125
+                    </p>
+                </div>
+
+                <div class="iteration-card">
+                    <div class="iteration-title">Iteración 4</div>
+                    <p style="color: var(--text-muted);">
+                        m = 0.4375, f(0.4375) = -0.284<br>
+                        ⇒ [0.4375, 0.5], e = 0.0625 (< 0.1) ✓
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADO FINAL -->
+        <section>
+            <div class="highlight-box">
+                <h3>🎯 Resultado Final</h3>
+                <p>La raíz aproximada de f(x) = e³ˣ - 4 es:</p>
+                <div class="formula-box" style="margin-top: 1rem; font-size: 1.8rem;">
+                    x ≈ 0.44
+                </div>
+                <p style="margin-top: 1rem;">con un error menor a 0.1</p>
+            </div>
+        </section>
+
+        <!-- TABLA DE ITERACIONES -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>📋</span>
+                    Tabla de Iteraciones
+                </h2>
+                
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>m</th>
+                            <th>f(a)</th>
+                            <th>f(b)</th>
+                            <th>f(m)</th>
+                            <th>e</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0.5</td>
+                            <td>-3</td>
+                            <td>16.0855</td>
+                            <td>0.4816</td>
+                            <td>0.5</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0.5</td>
+                            <td>0.25</td>
+                            <td>-3</td>
+                            <td>0.4816</td>
+                            <td>-1.8829</td>
+                            <td>0.25</td>
+                        </tr>
+                        <tr>
+                            <td>0.25</td>
+                            <td>0.5</td>
+                            <td>0.375</td>
+                            <td>-1.8829</td>
+                            <td>0.4816</td>
+                            <td>-0.919</td>
+                            <td>0.125</td>
+                        </tr>
+                        <tr>
+                            <td>0.375</td>
+                            <td>0.5</td>
+                            <td>0.4375</td>
+                            <td>-0.919</td>
+                            <td>0.4816</td>
+                            <td>-0.284</td>
+                            <td>0.0625</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CONCLUSIONES -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>✅</span>
+                    Conclusiones
+                </h2>
+                
+                <ul class="conclusion-list">
+                    <li>El método de bisección es sencillo y garantiza convergencia.</li>
+                    <li>Aunque es más lento que otros métodos, es confiable y robusto.</li>
+                    <li>Es ideal cuando se conoce un intervalo con cambio de signo y la función es continua.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer style="padding: 2rem 0; text-align: center; border-top: 2px solid rgba(59, 130, 246, 0.2); margin-top: 4rem;">
+        <div class="container">
+            <p style="color: var(--text-muted);">© 2025 Método de Bisección - Programación Numérica</p>
+        </div>
+    </footer>
+
+    <script src="Método de Bisección.js"></script>
+</body>
+</html>

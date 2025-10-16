@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método del Punto Fijo - Programación Numérica</title>
+    <link rel="stylesheet" href="Método del Punto Fijo .css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="back-button" onclick="history.back(); return false;">← Volver</a>
+                <h1 class="header-title">Método del Punto Fijo</h1>
+                <div class="student-info">
+                    <span class="info-badge">📅 16 de octubre de 2025</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">🎯</div>
+            <h1 class="hero-title">Método del Punto Fijo</h1>
+            <p class="hero-subtitle">Resolución Iterativa de Ecuaciones No Lineales</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- DEFINICIÓN -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>💡</span>
+                    Definición
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    El método del punto fijo es un procedimiento iterativo para resolver ecuaciones no lineales de la forma:
+                </p>
+                <div class="formula-box">
+                    f(x) = 0
+                </div>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                    Se basa en reescribir la ecuación como:
+                </p>
+                <div class="formula-box">
+                    x = g(x)
+                </div>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                    Una solución <em>r</em> de <em>f(x) = 0</em> es un <strong>punto fijo</strong> de <em>g(x)</em>, es decir:
+                </p>
+                <div class="formula-box">
+                    r = g(r)
+                </div>
+            </div>
+        </section>
+
+        <!-- FUNDAMENTO TEÓRICO -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>📚</span>
+                    Fundamento Teórico
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    Si <em>g: [a, b] → [a, b]</em> es continua y existe <em>r ∈ [a, b]</em> tal que <em>g(r) = r</em>, entonces <em>r</em> es una raíz de <em>f(x) = 0</em>.
+                </p>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    Se define la sucesión:
+                </p>
+                <div class="formula-box">
+                    xₙ₊₁ = g(xₙ), &nbsp; n = 0, 1, 2, ...
+                </div>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                    Si la sucesión converge, su límite es la raíz buscada.
+                </p>
+
+                <div style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid var(--tertiary-color); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--tertiary-color); margin-bottom: 1rem;">Existencia de raíz</h3>
+                    <p style="color: var(--text-color);">
+                        Si <em>g(a) > a</em> y <em>g(b) < b</em>, entonces existe al menos un <em>r ∈ (a, b)</em> tal que <em>g(r) = r</em>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONDICIÓN DE CONVERGENCIA -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>🔍</span>
+                    Condición de Convergencia
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    El método converge si, en un entorno de la raíz <em>r</em>, se cumple:
+                </p>
+                <div class="formula-box">
+                    |g′(r)| < 1
+                </div>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                    En este caso, la sucesión {xₙ} converge a <em>r</em>. Si |g′(r)| > 1, el método diverge.
+                </p>
+
+                <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid var(--warning-color); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--warning-color); margin-bottom: 1rem;">Teorema del Punto Fijo de Banach</h3>
+                    <p style="color: var(--text-color);">
+                        Si <em>g</em> es contractiva en [a, b] (es decir, |g(x₁) − g(x₂)| ≤ k|x₁ − x₂| con 0 < k < 1), entonces existe un único punto fijo al que converge el método.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALGORITMO -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>⚙️</span>
+                    Algoritmo
+                </h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <strong>Reescribir</strong> f(x) = 0 en la forma x = g(x).
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">2</span>
+                        <strong>Elegir</strong> una aproximación inicial x₀.
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">3</span>
+                        <strong>Iterar:</strong>
+                        <div class="formula-box" style="margin-top: 1rem;">
+                            xₙ₊₁ = g(xₙ)
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">4</span>
+                        <strong>Detener</strong> cuando |xₙ₊₁ − xₙ| < ε.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJEMPLO APLICADO -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>📊</span>
+                    Ejemplo Aplicado: Inversión que se Duplica en un Año
+                </h2>
+                <div style="background: rgba(6, 182, 212, 0.1); border: 2px solid var(--secondary-color); border-radius: 15px; padding: 2rem; margin: 1.5rem 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Planteamiento</h3>
+                    <p style="color: var(--text-color); line-height: 1.8;">
+                        Queremos hallar la tasa de interés mensual <em>r</em> que duplica una inversión en 12 meses:
+                    </p>
+                    <div class="formula-box">
+                        f(r) = (1 + r)¹² − 2 = 0
+                    </div>
+                    <p style="color: var(--text-color); line-height: 1.8; margin-top: 1rem;">
+                        Reescribimos como punto fijo:
+                    </p>
+                    <div class="formula-box">
+                        g(r) = \frac{2}{(1 + r)^{11}} - 1
+                    </div>
+                </div>
+
+                <div class="iteration-card">
+                    <div class="iteration-title">Iteraciones</div>
+                    <p style="color: var(--text-muted); line-height: 1.8;">
+                        x₀ = 0.05<br>
+                        x₁ = g(0.05) ≈ 0.059<br>
+                        x₂ = g(0.059) ≈ 0.058<br>
+                        x₃ = g(0.058) ≈ 0.058
+                    </p>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 2rem;">
+                    <h3>🎯 Resultado Final</h3>
+                    <p>La tasa de interés mensual es:</p>
+                    <div class="formula-box" style="margin-top: 1rem; font-size: 1.8rem;">
+                        r ≈ 0.058 &nbsp; (5.8%)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENTAJAS Y DESVENTAJAS -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>⚖️</span>
+                    Ventajas y Desventajas
+                </h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--success-color); margin-bottom: 1rem;">✅ Ventajas</h3>
+                        <ul style="padding-left: 1.5rem; color: var(--text-muted);">
+                            <li>Implementación simple.</li>
+                            <li>Bajo consumo de memoria.</li>
+                            <li>Útil para generar valores iniciales.</li>
+                            <li>Aplicable siempre que se pueda construir g(x).</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--danger-color); margin-bottom: 1rem;">❌ Desventajas</h3>
+                        <ul style="padding-left: 1.5rem; color: var(--text-muted);">
+                            <li>No siempre es posible construir g(x) adecuada.</li>
+                            <li>Convergencia lenta (lineal).</li>
+                            <li>Alta sensibilidad a x₀ y g(x).</li>
+                            <li>Puede oscilar o divergir si |g′(x)| ≥ 1.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSIÓN -->
+        <section>
+            <div class="content-card">
+                <h2 class="card-title">
+                    <span>✅</span>
+                    Conclusión
+                </h2>
+                <ul class="conclusion-list">
+                    <li>El método del punto fijo es sencillo pero requiere verificar cuidadosamente la convergencia.</li>
+                    <li>Es ideal como paso preliminar antes de usar métodos más rápidos como Newton-Raphson.</li>
+                    <li>La elección adecuada de g(x) es crucial para garantizar convergencia.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer style="padding: 2rem 0; text-align: center; border-top: 2px solid rgba(59, 130, 246, 0.2); margin-top: 4rem;">
+        <div class="container">
+            <p style="color: var(--text-muted);">© 2025 Método del Punto Fijo - Programación Numérica</p>
+        </div>
+    </footer>
+
+    <script src="Método del Punto Fijo .js"></script>
+</body>
+</html>
