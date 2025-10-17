@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Bisección - Programación Numérica</title>
+    <link rel="stylesheet" href="../Archivos css/newton.css">
+</head>
+<body>
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="unidad1.html" class="back-button">← Volver</a>
+                <h1 class="header-title">Programación Numérica FINESI</h1>
+                <div class="student-info">
+                    <span class="info-badge">👨‍🎓 Anthony Rusbel Puma Huanca</span>
+                    <span class="info-badge">📋 Código: 240132</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">↔️ </div>
+            <h1 class="hero-title">Método de Bisección</h1>
+            <p class="hero-subtitle">Procedimiento Numérico e Iterativo para Encontrar Raíces</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="content-section">
+            <div class="content-card">
+                <h2 class="section-title"><span>📚</span> Definición del Método de Bisección</h2>
+                <div class="section-content">
+                    <p>El método de bisección es un procedimiento numérico e iterativo que se utiliza para encontrar una raíz de una función, es decir, un valor de <em>x</em> que hace que <em>f(x) = 0</em>. Este método se basa en un principio sencillo: si una función continua cambia de signo en un intervalo cerrado [<em>a</em>, <em>b</em>], entonces existe al menos una raíz dentro de ese intervalo.</p>
+                    <div class="formula-box">f(a) · f(b) < 0  ⇒  existe al menos una raíz en (a, b)</div>
+                    <p>El método consiste en dividir repetidamente el intervalo por la mitad y elegir el subintervalo en el que la función cambia de signo. Con cada iteración, el intervalo se hace más pequeño y la aproximación a la raíz se vuelve más precisa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-card">
+                <h2 class="section-title"><span>🔧</span> Procedimiento</h2>
+                <div class="section-content">
+                    <div class="info-list">
+                        <ul>
+                            <li><strong>Paso 1:</strong> Calcular el punto medio: <strong>m = (a + b) / 2</strong></li>
+                            <li><strong>Paso 2:</strong> Evaluar <em>f(a)</em>, <em>f(b)</em> y <em>f(m)</em></li>
+                            <li><strong>Paso 3:</strong> Determinar el nuevo intervalo:<br>• Si <strong>f(a) · f(m) < 0</strong> → [<em>a</em>, <em>m</em>]<br>• Si <strong>f(m) · f(b) < 0</strong> → [<em>m</em>, <em>b</em>]</li>
+                            <li><strong>Paso 4:</strong> Calcular el error: <strong>e = (b − a) / 2</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-card">
+                <h2 class="section-title"><span>💡</span> Ejemplo: Función Exponencial</h2>
+                <div class="section-content">
+                    <p>Un ingeniero en control de procesos necesita calcular el tiempo <em>x</em> en horas que tarda en estabilizarse la temperatura de un horno industrial. El comportamiento se modela con:</p>
+                    <div class="formula-box">f(x) = e<sup>3x</sup> − 4</div>
+                    <p>Se sabe que la raíz se encuentra en el intervalo [0, 1]. Se aplica el Método de Bisección hasta obtener un error menor a <strong>0,1</strong>.</p>
+
+                    <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0;">Iteraciones Paso a Paso</h3>
+                    <table class="iteration-table">
+                        <thead>
+                            <tr><th>Iter</th><th>a</th><th>b</th><th>m</th><th>f(a)</th><th>f(b)</th><th>f(m)</th><th>Error</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>0</td><td>1</td><td>0,5</td><td>−3</td><td>16,0855</td><td>0,4816</td><td>0,5</td></tr>
+                            <tr><td>2</td><td>0</td><td>0,5</td><td>0,25</td><td>−3</td><td>0,4816</td><td>−1,8829</td><td>0,25</td></tr>
+                            <tr><td>3</td><td>0,25</td><td>0,5</td><td>0,375</td><td>−1,8829</td><td>0,4816</td><td>−0,919</td><td>0,125</td></tr>
+                            <tr><td>4</td><td>0,375</td><td>0,5</td><td>0,4375</td><td>−0,919</td><td>0,4816</td><td>−0,284</td><td>0,0625</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="result-box">
+                        <div class="result-title">🎯 Resultado Final</div>
+                        <div class="result-content">
+                            <p>La raíz aproximada de <em>f(x) = e<sup>3x</sup> − 4</em> es:</p>
+                            <p style="font-size: 1.3rem; margin: 1rem 0; color: var(--success-color);"><strong>x ≈ 0,44</strong></p>
+                            <p>con un error menor a <strong>0,1</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-card">
+                <h2 class="section-title"><span>💻</span> Código en Python</h2>
+                <div class="section-content">
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>🐍 Implementación del Método de Bisección</span>
+                            <button class="copy-button" onclick="copiarCodigo()">
+                                <span id="copyIcon">📋</span>
+                                <span id="copyText">Copiar</span>
+                            </button>
+                        </div>
+                        <pre id="codigoPython">import math
+
+def f(x):
+    return math.exp(3 * x) - 4
+
+def biseccion(a, b, tol=0.1):
+    if f(a) * f(b) >= 0:
+        print("Error: No hay cambio de signo en [a, b].")
+        return None
+
+    iteracion = 1
+    while True:
+        m = (a + b) / 2
+        error = (b - a) / 2
+        fm = f(m)
+
+        print(f"{iteracion:4d} {a:8.4f} {b:8.4f} {m:10.4f} {f(a):10.4f} {f(b):10.4f} {fm:10.4f} {error:8.4f}")
+
+        if error < tol:
+            print(f"\n✅ Raíz aproximada: x ≈ {m:.4f}")
+            return m
+
+        if f(a) * fm < 0:
+            b = m
+        else:
+            a = m
+        iteracion += 1
+
+raiz = biseccion(0.0, 1.0, tol=0.1)</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-card">
+                <h2 class="section-title"><span>✅</span> Conclusiones</h2>
+                <div class="section-content">
+                    <div class="info-list">
+                        <ul>
+                            <li>El método de bisección es sencillo y garantiza convergencia.</li>
+                            <li>Aunque es más lento que otros métodos, es confiable y robusto.</li>
+                            <li>Es ideal cuando se conoce un intervalo con cambio de signo y la función es continua.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Programación Numérica FINESI - Universidad Nacional del Altiplano</p>
+            <p>Docente: Fred Torres Cruz</p>
+        </div>
+    </footer>
+
+    <script src="../Archivos JS/newton.js"></script>
+</body>
+</html>
