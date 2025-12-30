@@ -152,3 +152,42 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* --- RESPONSIVE PARA DESCRIPCIÓN (CELULAR) --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    padding-top: 100px; /* Espacio para el menú flotante */
+    flex-direction: column;
+  }
+
+  /* Si tienes un grid o columnas, las pasamos a una sola fila */
+  .content, .grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  /* Ajuste de textos para lectura cómoda */
+  .text, p {
+    font-size: 1rem;
+    text-align: justify; /* O 'left' si prefieres */
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  /* Títulos */
+  h1, h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Imágenes dentro de la descripción */
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+}

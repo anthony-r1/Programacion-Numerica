@@ -139,3 +139,57 @@ a.secondary {
     --button-secondary-border: #1a1a1a;
   }
 }
+
+/* --- RESPONSIVE PARA HOME (CELULAR) --- */
+@media (max-width: 768px) {
+  /* 1. Cambiar orientación a vertical */
+  .main {
+    flex-direction: column;
+    padding: 90px 20px 40px 20px; /* Más espacio arriba para que no tape el menú */
+    height: auto;
+    min-height: 100vh;
+    gap: 30px;
+    justify-content: flex-start;
+  }
+
+  /* 2. Ajustar el bloque de texto */
+  .description {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+  }
+
+  /* 3. Ajustar tamaño de letras */
+  .description p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  /* Títulos grandes */
+  h1 {
+    font-size: 2.2rem !important; /* Forzamos tamaño menor */
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* 4. Centrar la tarjeta de identificación */
+  .center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 20px;
+    transform: scale(0.95); /* Un poquito más chica para que quepa bien */
+  }
+
+  /* 5. Menú flotante (ARPH) adaptable */
+  .nav {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow-x: auto; /* Permite deslizar si los botones no caben */
+    justify-content: flex-start; /* Alinea a la izquierda si hay scroll */
+  }
+}

@@ -155,3 +155,42 @@
     .cardsContainer { grid-template-columns: 1fr; }
     .bigTitle { font-size: 2.5rem; }
 }
+
+/* --- RESPONSIVE PARA MENU UNIDADES (CELULAR) --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    padding-top: 100px;
+    height: auto; /* Permitir que crezca hacia abajo */
+  }
+
+  /* Título de la sección */
+  .title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  /* LA REJILLA: Cambiar de columnas a lista vertical */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 30px; /* Espacio entre tarjetas */
+    width: 100%;
+  }
+
+  /* Ajuste de las tarjetas individuales */
+  .card {
+    width: 100%;
+    padding: 2rem;
+    min-height: auto; /* Quitar altura forzada si la tiene */
+  }
+
+  /* Texto dentro de las tarjetas */
+  .card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+}

@@ -193,7 +193,7 @@ OK Anapia         : suma = 1.000`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje2/1.png" alt="DataFrame Matriz" />
+            <img src="/Programacion-Numerica/Imagenes/eje2/1.png" alt="DataFrame Matriz" />
             <span className={styles.imgCaption}>Figura 1: DataFrame de la Matriz de Transición (5x5)</span>
         </div>
 
@@ -220,7 +220,7 @@ plt.show()`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje2/2.png" alt="Heatmap 5x5" />
+            <img src="/Programacion-Numerica/Imagenes/eje2/2.png" alt="Heatmap 5x5" />
             <span className={styles.imgCaption}>Figura 2: Mapa de calor de la matriz de transición expandida</span>
         </div>
       </div>
@@ -297,7 +297,7 @@ EIGENVALUE DOMINANTE: λ = 1.000000`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje2/3.png" alt="Eigenvalues 5x5" />
+            <img src="/Programacion-Numerica/Imagenes/eje2/3.png" alt="Eigenvalues 5x5" />
             <span className={styles.imgCaption}>Figura 3: Eigenvalues en el plano complejo</span>
         </div>
       </div>
@@ -379,7 +379,7 @@ HUB PRINCIPAL: Puno Ciudad (37.97%)
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje2/4.png" alt="Distribución Gráfica" />
+            <img src="/Programacion-Numerica/Imagenes/eje2/4.png" alt="Distribución Gráfica" />
             <span className={styles.imgCaption}>Figura 4: Distribución y Participación de Mercado con Anapia</span>
         </div>
       </div>
@@ -428,7 +428,7 @@ print("Convergencia alcanzada en 30 días.")`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje2/5.png" alt="Simulación" />
+            <img src="/Programacion-Numerica/Imagenes/eje2/5.png" alt="Simulación" />
             <span className={styles.imgCaption}>Figura 5: Evolución Temporal hacia el nuevo equilibrio</span>
         </div>
       </div>
@@ -475,7 +475,7 @@ plt.show()`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje2/6.png" alt="Red de Flujo 5 Nodos" />
+            <img src="/Programacion-Numerica/Imagenes/eje2/6.png" alt="Red de Flujo 5 Nodos" />
             <span className={styles.imgCaption}>Figura 6: Nueva Red de Flujos con Isla Anapia</span>
         </div>
       </div>

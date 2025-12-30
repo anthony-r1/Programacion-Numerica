@@ -196,7 +196,7 @@ Islas Uros           0.7        0.20     0.05      0.05
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje3/1.png" alt="Matrices" />
+            <img src="/Programacion-Numerica/Imagenes/eje3/1.png" alt="Matrices" />
             <span className={styles.imgCaption}>Figura 1: Definición de matrices de transición por temporada</span>
         </div>
 
@@ -239,7 +239,7 @@ print(" tiene colores más oscuros, indicando alto retorno y estancia en la ciud
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje3/2.png" alt="Heatmaps Comparativos" />
+            <img src="/Programacion-Numerica/Imagenes/eje3/2.png" alt="Heatmaps Comparativos" />
             <span className={styles.imgCaption}>Figura 2: Comparación visual entre temporada Alta y Baja</span>
         </div>
       </div>
@@ -308,7 +308,7 @@ Cálculos finalizados correctamente.`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje3/3.png" alt="Cálculos" />
+            <img src="/Programacion-Numerica/Imagenes/eje3/3.png" alt="Cálculos" />
             <span className={styles.imgCaption}>Figura 3: Ejecución de cálculos de eigenvalues</span>
         </div>
       </div>
@@ -381,7 +381,7 @@ Amantaní        |    23.68 % |     5.56 % |   +18.12
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje3/4.png" alt="Gráfico Comparativo" />
+            <img src="/Programacion-Numerica/Imagenes/eje3/4.png" alt="Gráfico Comparativo" />
             <span className={styles.imgCaption}>Figura 4: Comparativa de distribución de turistas</span>
         </div>
       </div>
@@ -468,7 +468,7 @@ Nota: El cambio drástico ocurre en el día 121.`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje3/5.png" alt="Simulación Anual" />
+            <img src="/Programacion-Numerica/Imagenes/eje3/5.png" alt="Simulación Anual" />
             <span className={styles.imgCaption}>Figura 5: Muestra de datos simulados</span>
         </div>
       </div>
@@ -526,7 +526,7 @@ print(" - Cuando es temporada baja (zona azul), Puno se dispara y las islas caen
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje3/6.png" alt="Evolución Gráfica" />
+            <img src="/Programacion-Numerica/Imagenes/eje3/6.png" alt="Evolución Gráfica" />
             <span className={styles.imgCaption}>Figura 6: Dinámica Anual de Turistas</span>
         </div>
       </div>

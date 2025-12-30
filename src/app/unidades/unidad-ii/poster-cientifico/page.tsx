@@ -288,7 +288,7 @@ export default function PosterCientificoPage() {
                 >
                     <img 
                         ref={imgRef}
-                        src="/Imagenes/poster.png" 
+                        src="/Programacion-Numerica/Imagenes/poster.png" 
                         alt="Poster Científico" 
                         className={styles.modalImage}
                         style={{ 

@@ -333,7 +333,7 @@ export default function EigenPage() {
                 </div>
                 <div className={styles.modalBody}>
                     <iframe 
-                        src="/pdfs/eigen.pdf" 
+                        src="/Programacion-Numerica/pdfs/eigen.pdf" 
                         className={styles.pdfEmbed}
                         title="Documento PDF"
                         style={{

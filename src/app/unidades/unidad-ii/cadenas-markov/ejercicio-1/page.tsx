@@ -215,11 +215,11 @@ OK Amantaní       : suma = 1.000`}
 
         {/* IMÁGENES 1 y 2 */}
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/1.png" alt="DataFrame Matriz" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/1.png" alt="DataFrame Matriz" />
             <span className={styles.imgCaption}>Figura 1: DataFrame de la Matriz de Transición</span>
         </div>
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/2.png" alt="Verificación Suma" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/2.png" alt="Verificación Suma" />
             <span className={styles.imgCaption}>Figura 2: Verificación de sumas de fila</span>
         </div>
 
@@ -264,7 +264,7 @@ print("\\nLos valores más oscuros indican mayor probabilidad de transición")`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/3.png" alt="Heatmap" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/3.png" alt="Heatmap" />
             <span className={styles.imgCaption}>Figura 3: Mapa de Calor de Probabilidades de Transición</span>
         </div>
       </div>
@@ -367,7 +367,7 @@ EIGENVALUE DOMINANTE: λ_1 = 1.000000`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/4.png" alt="Eigenvalues" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/4.png" alt="Eigenvalues" />
             <span className={styles.imgCaption}>Figura 4: Eigenvalues en el Plano Complejo</span>
         </div>
       </div>
@@ -468,7 +468,7 @@ Concentra el 34.22 % de turistas en equilibrio
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/5.png" alt="Distribución Gráfica" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/5.png" alt="Distribución Gráfica" />
             <span className={styles.imgCaption}>Figura 5: Gráfico de Distribución de Turistas en Equilibrio</span>
         </div>
       </div>
@@ -593,7 +593,7 @@ Día 30       0.3422      0.2388   0.2770     0.1419`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/6.png" alt="Simulación" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/6.png" alt="Simulación" />
             <span className={styles.imgCaption}>Figura 6: Evolución Temporal hacia el Equilibrio</span>
         </div>
       </div>
@@ -767,7 +767,7 @@ Retorno predominante hacia Puno Ciudad`}
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/7.png" alt="Red de Flujo" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/7.png" alt="Red de Flujo" />
             <span className={styles.imgCaption}>Figura 7: Red de Flujo Turístico - Lago Titicaca</span>
         </div>
       </div>
@@ -963,7 +963,7 @@ Distribución promedio de turistas en equilibrio:
         </div>
 
         <div className={styles.imageContainer}>
-            <img src="/Imagenes/eje1/8.png" alt="Proyección" />
+            <img src="/Programacion-Numerica/Imagenes/eje1/8.png" alt="Proyección" />
             <span className={styles.imgCaption}>Figura 8: Proyección de Flujos Diarios Importantes</span>
         </div>
 

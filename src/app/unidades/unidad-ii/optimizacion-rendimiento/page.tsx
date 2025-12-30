@@ -235,7 +235,7 @@ Tiempo de respuesta máximo estimado: 7428.33 ms`;
             <div className={styles.galleryGrid}>
                 {[11, 22, 33, 44, 55, 66].map((num) => (
                     <div key={num} className={styles.imageCard}>
-                        <img src={`/Imagenes/${num}.png`} alt={`Lighthouse ${num}`} />
+                        <img src={`/Programacion-Numerica/Imagenes/${num}.png`} alt={`Lighthouse ${num}`} />
                         <div className={styles.imgCaption}>Captura Lighthouse {num}.png</div>
                     </div>
                 ))}
@@ -364,7 +364,7 @@ Tiempo de respuesta máximo estimado: 7428.33 ms`;
             <div className={styles.galleryGrid}>
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                     <div key={num} className={styles.imageCard}>
-                        <img src={`/Imagenes/${num}.jpg`} alt={`JMeter ${num}`} />
+                        <img src={`/Programacion-Numerica/Imagenes/${num}.jpg`} alt={`JMeter ${num}`} />
                         <div className={styles.imgCaption}>Gráfico JMeter {num}.jpg</div>
                     </div>
                 ))}
