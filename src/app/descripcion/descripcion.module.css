@@ -153,37 +153,3 @@
     to { opacity: 1; }
 }
 
-/* --- ESTILOS MÓVIL: DESCRIPCIÓN --- */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-    padding-top: 100px;
-    flex-direction: column;
-  }
-
-  .content, .grid {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-  }
-
-  .text, p {
-    font-size: 1rem;
-    text-align: justify;
-    line-height: 1.6;
-    width: 100%;
-  }
-
-  h1, h2 {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-  }
-}
