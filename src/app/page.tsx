@@ -161,7 +161,7 @@ export default function Home() {
                     </div>
                     <div className="photo-area">
                       {/* Asegúrate de que la imagen exista en public/Imagenes/hola.jpg */}
-                      <img src="/Imagenes/hola.jpg" alt="Foto" className="profile-img" />
+                      <img src="/Programacion-Numerica/Imagenes/hola.jpg" alt="Foto" className="profile-img" />
                     </div>
                     <div className="vertical-text-opaque">ANTHONY</div>
                     <div className="card-footer-white">
