@@ -1,0 +1,197 @@
+/* --- CONFIGURACIÓN BASE --- */
+.container {
+    --granate: #D0002D;
+    --bright-red: #ff0037; /* Nuevo rojo brillante para hover */
+    --dark-bg: #050505;
+    --glass-bg: rgba(20, 20, 25, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-muted: #aaa;
+    
+    background-color: var(--dark-bg);
+    color: white;
+    min-height: 100vh;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* --- FONDO DE ESTRELLAS --- */
+.starsBg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--dark-bg);
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px);
+    background-size: 550px 550px, 350px 350px;
+    background-position: 0 0, 40px 60px;
+    z-index: 0; pointer-events: none;
+}
+
+/* --- HEADER --- */
+.header {
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky; top: 0; z-index: 100; padding: 15px 0;
+}
+.headerInner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+/* BOTÓN VOLVER */
+.backBtn {
+    background-color: var(--granate); 
+    color: white; padding: 10px 24px; border-radius: 30px;
+    text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    display: flex; align-items: center; gap: 8px; border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.backBtn:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(208, 0, 45, 0.6); }
+
+/* INFO ESTUDIANTE */
+.studentInfo { display: flex; gap: 15px; align-items: center; }
+.badge {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; color: #ccc;
+    display: flex; align-items: center; gap: 8px; white-space: nowrap;
+}
+.badge i { color: var(--granate); }
+
+/* --- HERO --- */
+.hero { position: relative; z-index: 1; text-align: center; padding: 80px 20px 60px; }
+.heroIcon {
+    font-size: 4rem; color: var(--granate); margin-bottom: 20px;
+    filter: drop-shadow(0 0 25px rgba(208, 0, 45, 0.5));
+    animation: pulse 3s infinite;
+}
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+.title {
+    font-family: var(--font-russo), sans-serif; font-size: 3.5rem; margin-bottom: 10px;
+    color: #fff; text-transform: uppercase; letter-spacing: 1px;
+}
+.subtitle { color: var(--text-muted); font-size: 1.3rem; margin-bottom: 30px; }
+.accentLine {
+    width: 80px; height: 4px; background: var(--granate); margin: 0 auto;
+    border-radius: 2px; box-shadow: 0 0 15px var(--granate);
+}
+
+/* --- MAIN WRAPPER --- */
+.mainWrapper {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; display: flex; flex-direction: column; gap: 60px;
+}
+
+/* --- TARJETAS --- */
+.introCard {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: 20px; padding: 40px; backdrop-filter: blur(12px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.1s;
+}
+.sectionTitle {
+    display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+    font-family: var(--font-russo); font-size: 1.8rem; color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;
+}
+.iconBox {
+    width: 45px; height: 45px; background: rgba(208, 0, 45, 0.1); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; color: var(--granate); font-size: 1.3rem;
+    border: 1px solid var(--granate);
+}
+.introContent p { color: #ccc; font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; }
+
+/* Grid Apps */
+.applicationsBox h3 { font-family: var(--font-russo); color: #fff; margin-bottom: 15px; font-size: 1.2rem; display: flex; gap: 10px; align-items: center; }
+.applicationsBox h3 i { color: var(--granate); }
+.appList { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+.appList li {
+    background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 3px solid #333;
+    transition: 0.3s; color: #aaa; font-size: 0.95rem;
+}
+.appList li:hover { border-left-color: var(--granate); background: rgba(255,255,255,0.06); transform: translateX(5px); }
+.appList strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1rem; }
+
+/* Grid Metodos */
+.methodsGrid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
+}
+
+/* TARJETA NORMAL */
+.methodCard {
+    background: rgba(15, 18, 22, 0.8);
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 30px; position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease; /* Transición suave */
+}
+.methodCard:hover {
+    border-color: var(--granate);
+    background: rgba(20, 25, 30, 0.9);
+    box-shadow: 0 10px 30px rgba(208, 0, 45, 0.15);
+}
+
+/* TARJETA DESTACADA (La número 5) - CORREGIDA */
+.highlightCard {
+    /* Estado Base (Un poco rojo, pero apagado) */
+    border-color: rgba(208, 0, 45, 0.4);
+    background: linear-gradient(180deg, rgba(208,0,45,0.05), rgba(15,18,22,0.9));
+    box-shadow: 0 0 15px rgba(208, 0, 45, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ESTADO HOVER (Aquí está la magia para que reaccione) */
+.highlightCard:hover {
+    border-color: var(--bright-red); /* Borde rojo brillante */
+    background: linear-gradient(180deg, rgba(208,0,45,0.2), rgba(10,10,10,0.95)); /* Fondo más intenso */
+    box-shadow: 0 0 40px rgba(208, 0, 45, 0.5), inset 0 0 20px rgba(208, 0, 45, 0.2); /* Resplandor fuerte */
+    z-index: 10;
+}
+
+.methodHeader { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.methodNumber {
+    width: 40px; height: 40px; background: var(--granate); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-russo); font-size: 1.2rem; box-shadow: 0 0 15px rgba(208,0,45,0.4);
+}
+.methodTitle { font-family: var(--font-russo); font-size: 1.4rem; color: #fff; line-height: 1.2; }
+.methodDesc { color: #bbb; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+
+.tagsContainer { display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+.tag { padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.tagSafe { background: rgba(46, 204, 113, 0.15); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.3); }
+.tagSlow { background: rgba(241, 196, 15, 0.15); color: #f1c40f; border: 1px solid rgba(241, 196, 15, 0.3); }
+.tagFast { background: rgba(52, 152, 219, 0.15); color: #3498db; border: 1px solid rgba(52, 152, 219, 0.3); }
+.tagRisk { background: rgba(231, 76, 60, 0.15); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.3); }
+.tagNeutral { background: rgba(149, 165, 166, 0.15); color: #95a5a6; border: 1px solid rgba(149, 165, 166, 0.3); }
+
+.methodStats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px;
+    background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;
+}
+.stat { font-size: 0.85rem; color: #fff; }
+.stat span { display: block; color: #666; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 2px; }
+
+.detailsBtn {
+    display: block; text-align: center; width: 100%; padding: 12px 0;
+    background: transparent; border: 1px solid var(--granate); color: #fff;
+    border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+    transition: 0.3s;
+}
+/* Efecto hover en el botón de la tarjeta destacada */
+.highlightCard:hover .detailsBtn {
+    background: #fff;
+    color: var(--granate);
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+.detailsBtn:hover { background: var(--granate); box-shadow: 0 5px 20px rgba(208,0,45,0.3); }
+
+.footer { text-align: center; margin-top: 100px; padding: 30px; border-top: 1px solid #222; color: #666; font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+    .headerInner { flex-direction: column; gap: 15px; }
+    .title { font-size: 2.5rem; }
+    .methodsGrid { grid-template-columns: 1fr; }
+}

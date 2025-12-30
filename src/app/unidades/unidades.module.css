@@ -1,0 +1,157 @@
+/* --- LAYOUT UNIDADES --- */
+.unitsLayout {
+    padding: 140px 10% 50px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Importante para el efecto 3D */
+    perspective: 1000px; 
+}
+
+/* Header: Titulo + Cohete */
+.unitsHeader {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    animation: fadeInDown 1s ease-out;
+}
+
+.rocketIcon {
+    font-size: 2.5rem;
+    color: #a0a0ff;
+    margin-bottom: 10px;
+    display: inline-block; /* Cambiado a inline-block para animar transform */
+    filter: drop-shadow(0 0 10px rgba(160, 160, 255, 0.5));
+    transition: transform 0.1s ease-out; /* Suaviza el movimiento */
+}
+
+.bigTitle {
+    font-family: var(--font-russo), sans-serif;
+    font-size: 3.5rem;
+    color: #a0a0ff;
+    text-transform: capitalize;
+}
+
+.underlineAccent {
+    width: 60px;
+    height: 4px;
+    background: #444;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- TARJETAS --- */
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    /* Para que las tarjetas roten en su propio eje 3D */
+    transform-style: preserve-3d;
+}
+
+.unitCard {
+    background: rgba(15, 20, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.1s ease-out, border-color 0.3s, box-shadow 0.3s; /* Optimizado para movimiento suave */
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Retraso para la segunda tarjeta */
+.card2 { animation-delay: 0.2s; }
+
+.unitCard:hover {
+    border-color: var(--granate);
+    /* El transform se maneja por JS, pero añadimos la sombra aquí */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Parte superior de la tarjeta (Icono + Titulo) */
+.cardTop {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.iconCircle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Colores específicos */
+.colorBlue {
+    background: rgba(100, 149, 237, 0.2);
+    color: #6495ed;
+}
+
+.colorGold {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+}
+
+.unitInfo h2 {
+    font-family: var(--font-russo), sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.dateBadge {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex; align-items: center; gap: 5px;
+}
+
+/* Descripción */
+.unitDesc {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    min-height: 50px;
+}
+
+/* Botón */
+.actionBtn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid var(--granate);
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-russo), sans-serif;
+    font-size: 1rem;
+    transition: 0.3s;
+    background: rgba(208, 0, 45, 0.1);
+}
+
+.actionBtn:hover {
+    background: var(--granate);
+    box-shadow: 0 0 15px var(--granate);
+}
+
+/* ANIMACIONES */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cardsContainer { grid-template-columns: 1fr; }
+    .bigTitle { font-size: 2.5rem; }
+}

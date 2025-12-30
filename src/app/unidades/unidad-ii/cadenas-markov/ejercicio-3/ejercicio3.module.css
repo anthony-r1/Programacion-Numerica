@@ -1,0 +1,255 @@
+/* src/app/unidades/unidad-ii/cadenas-markov/ejercicio-3/ejercicio3.module.css */
+
+.container {
+    --primary-bg: #050505;
+    --card-bg: rgba(20, 20, 25, 0.95);
+    --granate: #D0002D;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f1f5f9;
+    padding-top: 100px;
+}
+
+/* FONDO */
+.nightSky {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #1a0505 0%, #000000 100%);
+    z-index: -2;
+}
+
+/* HEADER: BOTÓN ROJO ABSOLUTO */
+.header {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.backButton {
+    background-color: #c60025;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    box-shadow: 0 4px 15px rgba(198, 0, 37, 0.4);
+}
+.backButton:hover {
+    background-color: #ff0033;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 0, 51, 0.6);
+}
+
+/* TÍTULOS */
+.pageTitle {
+    font-size: 2.8rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.pageSubtitle {
+    text-align: center;
+    color: var(--granate);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* TARJETAS INDEPENDIENTES */
+.stepCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.stepCard:hover {
+    border-color: var(--granate);
+    transform: translateY(-5px);
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 25px;
+    border-left: 6px solid var(--granate);
+    padding-left: 20px;
+    font-weight: 700;
+}
+
+.subTitle {
+    font-size: 1.4rem;
+    color: #eee;
+    margin: 30px 0 15px 0;
+    font-weight: 600;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* LISTAS */
+.paperList {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.paperList li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+.paperList li::marker {
+    color: var(--granate);
+}
+
+/* CÓDIGO PYTHON */
+.codeBlock {
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-left: 4px solid #3b82f6;
+    border-radius: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.codeHeader {
+    background: #1a1a1a;
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.copyButton {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 4px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+.copyButton:hover { background: #fff; color: #000; }
+
+.preBlock {
+    margin: 0;
+    padding: 20px;
+    color: #e0e0e0;
+    font-family: 'Consolas', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* FLECHA EJECUCIÓN */
+.executionArrow {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* CONSOLA SALIDA */
+.terminalWindow {
+    background: #050505;
+    border: 1px solid #333;
+    border-left: 4px solid #22c55e;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    font-family: 'Consolas', monospace;
+}
+
+.terminalHeader {
+    background: #191919;
+    padding: 8px 15px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminalBody {
+    padding: 20px;
+    margin: 0;
+    color: #4ade80;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+/* IMÁGENES */
+.imageContainer {
+    text-align: center;
+    margin: 40px 0;
+    background: rgba(255,255,255,0.02);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.imageContainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+.imgCaption {
+    display: block;
+    margin-top: 15px;
+    color: #aaa;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+    color: #666;
+}

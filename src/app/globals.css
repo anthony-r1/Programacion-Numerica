@@ -1,0 +1,30 @@
+:root {
+  --granate: #D0002D;
+  --dark-bg: #050505;
+  --glass-white: rgba(255, 255, 255, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --text-gray: #a0a0a0;
+  
+  /* Variables Navbar Pastilla */
+  --pill-bg: #d4d4d4;
+  --pill-text: #555;
+  --pill-active-bg: #000;
+  --pill-active-text: #fff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--dark-bg);
+  background-image: radial-gradient(circle at 50% 50%, rgba(208, 0, 45, 0.05) 0%, transparent 70%);
+  color: white; 
+  /* Usamos la variable de fuente configurada en layout.tsx */
+  font-family: var(--font-rajdhani), sans-serif; 
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Aplicar fuente Russo One a los títulos usando la variable de Next.js */
+h1, .brand-name, .neon-text, .block-title, .lanyard-text, .vertical-text-opaque {
+  font-family: var(--font-russo), sans-serif;
+}

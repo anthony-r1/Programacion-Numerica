@@ -1,0 +1,235 @@
+/* --- CONFIGURACIÓN BASE --- */
+.container {
+    --granate: #D0002D;
+    --dark-bg: #050505;
+    --glass-bg: rgba(20, 20, 25, 0.7);
+    --glass-border: rgba(208, 0, 45, 0.3);
+    --text-muted: #aaa;
+    
+    background-color: var(--dark-bg);
+    color: white;
+    min-height: 100vh;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* --- FONDO ESPACIAL (Como en la imagen de referencia, sin lag) --- */
+.starsBg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--dark-bg);
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+        radial-gradient(rgba(208, 0, 45, 0.1) 2px, transparent 4px); /* Nebulosa sutil granate */
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    z-index: 0; pointer-events: none;
+}
+
+/* --- HEADER (Idéntico a la referencia: Botón Sólido) --- */
+.header {
+    background: rgba(5, 5, 5, 0.95); /* Fondo oscuro sólido */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil */
+    position: sticky; top: 0; z-index: 100; padding: 15px 0;
+}
+.headerInner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+/* --- BOTÓN BACK (Estilo Sólido Rojo como la imagen) --- */
+.backBtn {
+    background-color: #D0002D; /* Rojo sólido */
+    color: white;
+    padding: 10px 24px;
+    border-radius: 30px; /* Bordes redondeados */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex; align-items: center; gap: 10px;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.backBtn:hover {
+    transform: scale(1.05);
+    background-color: #a00024; /* Un poco más oscuro al hover */
+    box-shadow: 0 0 15px rgba(208, 0, 45, 0.4);
+}
+.backBtn i { font-size: 1rem; } /* Icono de flecha */
+
+/* --- INFO ESTUDIANTE (Estilo Botón Oscuro) --- */
+.studentInfo { display: flex; gap: 15px; align-items: center; }
+.badge {
+    background: rgba(255,255,255,0.05); /* Fondo gris muy oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px; border-radius: 8px; 
+    font-size: 0.85rem; color: #ccc;
+    display: flex; align-items: center; gap: 8px; white-space: nowrap; transition: 0.3s;
+}
+.badge:hover { border-color: var(--granate); color: white; background: rgba(208,0,45,0.1); }
+.badge i { color: var(--granate); }
+
+/* --- HERO SECTION --- */
+.hero { position: relative; z-index: 1; text-align: center; padding: 80px 20px 60px; }
+.heroIcon {
+    font-size: 4rem; color: var(--granate); margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(208, 0, 45, 0.6));
+    animation: float 3s ease-in-out infinite alternate;
+}
+@keyframes float { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+
+.title {
+    font-family: var(--font-russo), sans-serif; font-size: 3.5rem; margin-bottom: 10px;
+    color: #fff; text-transform: uppercase; letter-spacing: 1px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.subtitle { color: var(--text-muted); font-size: 1.3rem; margin-bottom: 30px; }
+.accentLine {
+    width: 100px; height: 3px; background: var(--granate); margin: 0 auto;
+    border-radius: 2px; box-shadow: 0 0 15px var(--granate);
+}
+
+/* --- WRAPPER PRINCIPAL --- */
+.mainWrapper {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; display: flex; flex-direction: column; gap: 70px;
+}
+
+/* --- TARJETAS GLASS (Estilo General) --- */
+.glassCard {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: 16px; padding: 35px; backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3); position: relative; overflow: hidden;
+    transition: all 0.3s ease;
+}
+/* Efecto de brillo al pasar el mouse */
+.glassCard::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(208, 0, 45, 0.1), transparent);
+    transition: 0.5s;
+}
+.glassCard:hover::before { left: 100%; }
+
+.sectionTitle {
+    display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+    font-family: var(--font-russo); font-size: 1.8rem; color: #fff;
+    border-bottom: 1px solid rgba(208, 0, 45, 0.2); padding-bottom: 15px;
+}
+.iconBox {
+    width: 40px; height: 40px; background: rgba(208, 0, 45, 0.1); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; color: var(--granate); font-size: 1.2rem;
+    border: 1px solid var(--granate);
+}
+.introContent p { color: #ccc; font-size: 1.1rem; line-height: 1.7; }
+
+
+/* --- GRID DE PROBLEMAS (DINÁMICO, NO CUADRADO) --- */
+.problemsGrid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px;
+}
+
+/* Tarjeta de Problema Individual */
+.problemCard {
+    background: rgba(10, 10, 12, 0.8);
+    border: 1px solid rgba(208, 0, 45, 0.2); border-radius: 12px;
+    overflow: hidden; transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+/* El efecto Tilt se aplica en el TSX, aquí solo el hover base */
+.problemCard:hover {
+    border-color: var(--granate);
+    box-shadow: 0 20px 40px rgba(208, 0, 45, 0.15);
+}
+
+.problemHeader {
+    background: linear-gradient(90deg, rgba(208, 0, 45, 0.15), transparent);
+    padding: 15px 20px; display: flex; align-items: center; gap: 15px;
+    border-bottom: 1px solid rgba(208, 0, 45, 0.2);
+}
+.problemNumber {
+    font-family: var(--font-russo); font-size: 1.4rem; color: #fff;
+    background: var(--granate); width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center; border-radius: 50%;
+    box-shadow: 0 0 10px rgba(208, 0, 45, 0.5);
+}
+.problemTitle { font-family: var(--font-russo); font-size: 1.2rem; text-transform: uppercase; color: #fff; letter-spacing: 1px; }
+
+.problemContent { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; gap: 20px; }
+.desc { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+/* Caja de Restricciones (Estilo Código) */
+.constraintsBox {
+    background: #080808; border-left: 4px solid var(--granate); border-radius: 0 8px 8px 0;
+    padding: 15px; display: flex; flex-direction: column; gap: 10px;
+    font-family: 'Consolas', monospace; font-size: 0.9rem; color: #d4d4d4;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+.constraintsBox span { display: block; }
+.obj { color: var(--granate); font-weight: bold; margin-top: 5px; text-shadow: 0 0 5px rgba(208,0,45,0.3); }
+
+/* --- MINI TERMINAL --- */
+.terminalMini {
+    background: #000; border-top: 1px solid #222;
+    padding: 15px 20px; font-family: 'Consolas', monospace; font-size: 0.85rem;
+}
+.termHeader { display: flex; gap: 6px; margin-bottom: 12px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+.termBody p { margin-bottom: 5px; color: #777; }
+.termBody .input { color: #fff; font-weight: bold; }
+.outputSys { color: var(--granate); margin-bottom: 5px; font-weight: bold; }
+
+.asciiArtMini {
+    color: #fff; white-space: pre; line-height: 1;
+    font-family: 'Consolas', monospace; margin-top: 15px;
+    display: block; font-weight: bold;
+    text-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+/* --- CÓDIGO PYTHON Y TERMINAL GRANDE (Estilo Consistente Granate) --- */
+.codeSection { background: #080808; border: 1px solid rgba(208,0,45,0.2); border-radius: 12px; overflow: hidden; margin-top: 25px; }
+.codeHeader {
+    background: #111; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(208,0,45,0.1);
+}
+.langLabel { display: flex; align-items: center; gap: 10px; font-weight: bold; color: #fff; }
+.copyBtn {
+    background: rgba(208,0,45,0.1); border: 1px solid var(--granate); color: #fff; padding: 6px 15px;
+    border-radius: 6px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 8px; font-size: 0.85rem;
+}
+.copyBtn:hover { background: var(--granate); }
+
+.preBlock {
+    margin: 0; padding: 30px; background: #080808;
+    font-family: 'Consolas', monospace; font-size: 0.95rem; color: #d4d4d4;
+    white-space: pre-wrap; word-break: break-word; line-height: 1.6;
+}
+
+/* Syntax Colors (VS Code Dark theme adapted) */
+.k { color: #c586c0; font-weight: bold; } .f { color: #dcdcaa; } .s { color: #ce9178; } 
+.n { color: #b5cea8; } .c { color: #6a9955; font-style: italic; } .b { color: #4ec9b0; } .op { color: #d4d4d4; }
+
+.fullTerminal {
+    background: #000; border: 1px solid #333; border-radius: 12px;
+    font-family: 'Consolas', monospace; margin-top: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+.fullTermHeader {
+    background: #1a1a1a; padding: 10px 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #333;
+}
+.termTitle { color: #666; font-size: 0.85rem; margin-left: auto; }
+.fullTermBody { padding: 30px; color: #ccc; font-size: 0.95rem; }
+.asciiArtLarge {
+    color: #fff; white-space: pre; line-height: 1.1; font-family: 'Consolas', monospace;
+    margin: 20px 0; font-weight: bold;
+}
+
+/* FOOTER */
+.footer { text-align: center; margin-top: 100px; padding: 30px; border-top: 1px solid #222; color: #666; font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+    .headerInner { flex-direction: column; gap: 15px; }
+    .title { font-size: 2.8rem; }
+    .problemsGrid { grid-template-columns: 1fr; }
+}

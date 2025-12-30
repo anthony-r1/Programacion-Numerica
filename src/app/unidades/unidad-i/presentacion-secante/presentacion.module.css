@@ -1,0 +1,318 @@
+/* src/app/unidades/unidad-i/presentacion-secante/presentacion.module.css */
+
+.container {
+    --primary-bg: #0a0a0a;
+    --card-bg: #111;
+    --granate: #D0002D;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border: rgba(255, 255, 255, 0.1);
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-top: 100px; /* Espacio para que el header no tape el contenido */
+}
+
+/* --- HEADER SUPERIOR (Panel exacto de la imagen) --- */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between; /* Botón a la izquierda, Info a la derecha */
+    align-items: center;
+}
+
+.backButton {
+    background-color: #c60025; /* Rojo intenso */
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    box-shadow: 0 4px 15px rgba(198, 0, 37, 0.4);
+}
+
+.backButton:hover {
+    background-color: #ff0033;
+    transform: scale(1.05);
+}
+
+/* Información del Estudiante (Lado Derecho) */
+.studentInfo {
+    display: flex;
+    gap: 15px;
+}
+
+.infoBadge {
+    background-color: #111; /* Fondo oscuro */
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.infoBadge i {
+    color: var(--granate); /* Icono rojo */
+}
+
+/* --- TARJETAS INDEPENDIENTES (Separación de contenido) --- */
+.contentCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px; /* Separación entre tarjetas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.contentCard:hover {
+    border-color: var(--granate);
+    transform: translateY(-5px);
+}
+
+/* --- PORTADA / TÍTULO --- */
+.heroSection {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.university {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.mainTitle {
+    font-size: 3rem;
+    color: #fff;
+    margin: 10px 0;
+    font-family: serif; 
+    text-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.metaInfo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.metaBlock {
+    text-align: left;
+}
+
+.metaBlock h4 {
+    color: var(--granate);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.metaBlock ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.metaBlock li, .metaBlock p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 4px;
+}
+
+/* --- SECCIONES DE CONTENIDO --- */
+.sectionTitle {
+    font-size: 1.8rem;
+    color: #fff;
+    border-left: 5px solid var(--granate);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-family: serif;
+    font-weight: 600;
+}
+
+.textBlock {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* --- FÓRMULAS MATEMÁTICAS --- */
+.mathBox {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 25px;
+    margin: 25px 0;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    border-radius: 8px;
+    overflow-x: auto;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.fraction {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.num {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+    display: block;
+}
+
+.den {
+    padding-top: 2px;
+    display: block;
+}
+
+/* --- LISTAS --- */
+.customList {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.customList li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    color: #ddd;
+}
+
+.customList li::before {
+    content: "•";
+    color: var(--granate);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1rem;
+}
+
+.numberedList {
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.numberedList li {
+    list-style: none;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+}
+
+.numberedList li span {
+    flex: 1;
+}
+
+.numberedList li::before {
+    content: counter(item) ".";
+    counter-increment: item;
+    color: var(--granate);
+    font-weight: bold;
+    min-width: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- GRID VENTAJAS/DESVENTAJAS --- */
+.comparisonGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.cardBox {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.cardBox:hover {
+    transform: translateY(-5px);
+    border-color: var(--granate);
+}
+
+.cardBox h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- EJEMPLOS --- */
+.exampleBox {
+    background: rgba(208, 0, 45, 0.05);
+    border: 1px solid rgba(208, 0, 45, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.stepTitle {
+    color: #fff;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1.1rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+    padding-bottom: 5px;
+    width: fit-content;
+}
+
+/* --- CONCLUSIÓN --- */
+.conclusionBox {
+    background: linear-gradient(135deg, #151515, #0a0a0a);
+    border: 1px solid var(--granate);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+    .header { flex-direction: column; gap: 15px; padding: 1.5rem; position: relative;}
+    .comparisonGrid { grid-template-columns: 1fr; }
+    .mainTitle { font-size: 2rem; }
+    .metaInfo { flex-direction: column; gap: 20px; text-align: center; }
+    .container { padding-top: 20px; }
+}

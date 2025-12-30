@@ -1,0 +1,177 @@
+/* --- NAVBAR TIPO PASTILLA --- */
+.pill-navbar {
+    position: absolute; top: 30px; width: 100%;
+    display: flex; justify-content: center; z-index: 100;
+}
+.pill-container {
+    background-color: var(--pill-bg); border-radius: 50px;
+    padding: 8px 15px; display: flex; align-items: center; gap: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    height: 60px;
+}
+.brand-area { display: flex; align-items: center; gap: 10px; color: #000; margin-left: 10px;}
+.brand-icon { font-size: 1.5rem; }
+.brand-name { font-size: 1.1rem; letter-spacing: 1px; color: #000; }
+
+.pill-nav-links { display: flex; align-items: center; gap: 15px; }
+.nav-link {
+    text-decoration: none; color: var(--pill-text);
+    font-weight: 700; font-size: 1rem;
+    display: flex; align-items: center; gap: 8px; transition: 0.3s;
+    padding: 8px 15px; border-radius: 50px;
+}
+.nav-link i { font-size: 1rem; }
+.active-link {
+    background-color: var(--pill-active-bg); color: var(--pill-active-text);
+    border: 2px solid #fff; padding: 8px 25px;
+}
+.nav-link:not(.active-link):hover { color: var(--granate); }
+
+
+/* --- HERO --- */
+.hero { display: flex; justify-content: space-between; align-items: center; padding: 0 10%; height: 100vh; padding-top: 60px; }
+.hero-left { max-width: 650px; z-index: 2; }
+
+/* ESTILOS DE LOS BADGES */
+.glass-badge {
+    display: inline-block; background: var(--glass-white); border: 1px solid var(--glass-border);
+    padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; letter-spacing: 2px; color: #fff;
+    margin-bottom: 25px; backdrop-filter: blur(4px);
+    transition: 0.3s;
+    cursor: default;
+}
+.glass-badge:hover {
+    background: var(--granate); border-color: var(--granate); color: #fff; box-shadow: 0 0 20px var(--granate);
+}
+
+.granate-contour { color: var(--granate); -webkit-text-stroke: 1px var(--granate); text-shadow: 0 0 20px var(--granate); }
+.granate-glow { color: var(--granate); text-shadow: 0 0 10px var(--granate); }
+
+.block-title { font-size: 4.2rem; line-height: 1; color: white; margin-bottom: 15px;}
+.role-subtitle { font-size: 2rem; color: #fff; margin-bottom: 25px; height: 30px; }
+.hero-desc { color: var(--text-gray); margin-bottom: 35px; max-width: 500px; line-height: 1.6; }
+
+.tech-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+.glass-pill {
+    background: var(--glass-white); border: 1px solid var(--glass-border); padding: 6px 18px; border-radius: 20px;
+    font-size: 0.85rem; color: #fff; cursor: default; transition: 0.3s;
+}
+.glass-pill:hover { background: var(--granate); border-color: var(--granate); color: #fff; box-shadow: 0 0 20px var(--granate); }
+
+/* --- FOTOCHECK Y CINTAS --- */
+.hero-right { display: flex; align-items: center; justify-content: center; width: 300px; height: 500px; perspective: 1200px; }
+
+.id-card-scene {
+    width: 260px; height: 420px; position: relative;
+    animation: idle-swing 4s ease-in-out infinite; 
+    transform-origin: top center;
+}
+
+/* CINTAS */
+.lanyard-container {
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 0; height: 0; z-index: -1;
+}
+
+.lanyard-arm {
+    position: absolute; bottom: 0;
+    width: 20px; height: 500px; 
+    background: #111;
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 3px 3px;
+    transform-origin: bottom center;
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.lanyard-arm-left { transform: rotate(-12deg); }
+.lanyard-arm-right { transform: rotate(12deg); }
+
+.lanyard-text {
+    writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);
+    color: #9ca3af; 
+    font-size: 10px; letter-spacing: 5px; white-space: nowrap;
+}
+
+/* Tarjeta */
+.id-card-wrapper { width: 100%; height: 100%; cursor: grab; position: relative; }
+.id-card-wrapper:active { cursor: grabbing; }
+
+.card-inner { 
+    position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-face {
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+    border-radius: 18px; overflow: hidden; 
+    border: 2px solid #222;
+    background: linear-gradient(145deg, #100005, #000);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.9); display: flex; flex-direction: column;
+}
+
+.card-front .card-header { padding: 20px; font-size: 0.8rem; letter-spacing: 1px; }
+
+.photo-area {
+    width: 150px; height: 180px; background: #111; margin: 0 0 0 25px;
+    border-radius: 10px; overflow: hidden; border: 1px solid #333;
+}
+.profile-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s; }
+.card-face:hover .profile-img { filter: grayscale(0%); }
+
+.vertical-text-opaque {
+    position: absolute; right: 20px; top: 50px;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-size: 3rem; letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.1); z-index: 5; pointer-events: none;
+}
+.card-footer-white {
+    background: #e0e0e0; color: #000; margin-top: auto; padding: 25px 15px 15px;
+    border-top-left-radius: 20px; border-top-right-radius: 20px; text-align: center;
+}
+.card-footer-white h3 { font-size: 0.8rem; font-weight: 800; margin-bottom: 5px; }
+.role-badge { background: #000; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; display: inline-block; }
+
+.card-back { transform: rotateY(180deg); align-items: center; justify-content: center; color: white; }
+.qr-box { font-size: 5rem; color: #fff; margin-bottom: 20px; }
+.card-back h3 { color: var(--granate); margin-bottom: 10px; letter-spacing: 2px; }
+
+/* Animación Péndulo */
+@keyframes idle-swing {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+/* BARRA SOCIAL */
+.social-fixed-right {
+    position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+    display: flex; align-items: center; z-index: 100;
+}
+.toggle-bar {
+    width: 6px; height: 300px; background: var(--granate);
+    box-shadow: -2px 0 15px var(--granate); border-radius: 4px 0 0 4px;
+    cursor: pointer; position: relative; z-index: 2; transition: 0.3s;
+}
+.toggle-bar:hover { width: 10px; }
+.social-icons {
+    position: absolute; right: 0; top: 0; height: 100%;
+    background: rgba(0,0,0,0.95); border: 2px solid var(--granate); border-right: none;
+    padding: 0 25px 0 35px; display: flex; flex-direction: column; justify-content: center; gap: 25px;
+    border-radius: 15px 0 0 15px; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 1;
+}
+.social-fixed-right.active .social-icons { transform: translateX(0); }
+.social-icons a { color: #888; font-size: 1.5rem; opacity: 0; transform: translateX(20px); transition: 0.3s; }
+.social-icons a:hover { color: var(--granate); transform: scale(1.2) !important; }
+.social-fixed-right.active .social-icons a { animation: slideIn 0.4s forwards; animation-delay: calc(0.1s * var(--i)); }
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+
+/* UTILS CARGA */
+#loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s; }
+.loader-content { text-align: center; }
+.neon-text { color: var(--granate); font-size: 3.5rem; text-shadow: 0 0 20px var(--granate); margin-bottom: 20px; letter-spacing: 2px; }
+.loading-bar-container { width: 300px; height: 4px; background: #222; margin: 0 auto; }
+.loading-bar { height: 100%; width: 0%; background: var(--granate); box-shadow: 0 0 10px var(--granate); }
+.cursor { animation: blink 1s infinite; } @keyframes blink { 50% { opacity: 0; } }
+.hidden { display: none; }

@@ -1,0 +1,188 @@
+/* src/app/unidades/unidad-ii/poster-cientifico/poster.module.css */
+
+.container {
+    --primary-bg: #050505;
+    --card-bg: rgba(20, 20, 25, 0.95);
+    --granate: #D0002D;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Times New Roman', serif;
+    color: #f1f5f9;
+    /* CORRECCIÓN: Quitamos el padding gigante porque el header ya no flota encima */
+    padding-top: 20px;
+}
+
+/* FONDO */
+.nightSky {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--primary-bg);
+    background: radial-gradient(circle at 50% 50%, #1a0505 0%, #000000 100%);
+    z-index: -2;
+}
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.star { position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 2s infinite; }
+@keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+
+/* HEADER - CORRECCIÓN: ABSOLUTE (Se queda arriba y no baja contigo) */
+.header {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000;
+    padding: 1rem 0; 
+    font-family: 'Segoe UI', sans-serif;
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.headerContent { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+.backButton {
+    background-color: #c60025; color: white; padding: 0.6rem 1.5rem; border-radius: 50px;
+    text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;
+    transition: all 0.3s ease; border: none;
+}
+.backButton:hover { background-color: #ff0033; transform: scale(1.05); }
+.studentInfo { display: flex; gap: 10px; }
+.infoBadge {
+    background-color: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); color: #ccc;
+    padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;
+}
+.infoBadge i { color: var(--granate); }
+
+/* PAPER CONTAINER */
+.paperContainer {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 5rem;
+    /* CORRECCIÓN: Margen superior para separarlo visualmente del header absoluto */
+    margin-top: 7rem; 
+    margin-bottom: 4rem;
+    box-shadow: 0 0 60px rgba(0,0,0,0.9);
+    position: relative;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* BOTÓN FLOTANTE */
+.floatingButtonContainer {
+    text-align: center; 
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255,255,255,0.02); 
+    border-radius: 10px; 
+    border: 1px dashed rgba(255,255,255,0.2);
+}
+.posterButton {
+    background: linear-gradient(135deg, var(--granate), #800000);
+    color: white; border: none; padding: 1rem 2.5rem; font-size: 1.2rem;
+    border-radius: 50px; cursor: pointer; box-shadow: 0 0 25px rgba(208, 0, 45, 0.4);
+    transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'Segoe UI', sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+}
+.posterButton:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 0, 50, 0.6); }
+
+/* TÍTULO DEL PAPER */
+.paperTitle {
+    font-size: 2.8rem; text-align: center; color: #fff; margin-bottom: 1.5rem; line-height: 1.1; font-weight: bold;
+}
+.paperMeta {
+    text-align: center; color: #aaa; margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+.authorName { color: var(--granate); font-weight: bold; font-size: 1.3rem; display: block; margin-bottom: 5px; }
+.affil { display: block; margin-top: 5px; font-size: 0.95rem; font-style: italic; color: #ccc; }
+
+/* ABSTRACT */
+.abstractBox {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2.5rem; margin: 2rem 0; border-left: 5px solid var(--granate);
+    font-style: italic; color: #ddd; font-size: 1.1rem; line-height: 1.8;
+}
+.keywords { margin-top: 15px; font-size: 1rem; color: #bbb; font-family: 'Segoe UI', sans-serif; font-style: normal; }
+
+/* SECCIONES Y TEXTO */
+.sectionTitle {
+    font-family: 'Segoe UI', sans-serif; font-size: 1.8rem; color: #fff; font-weight: 700;
+    margin: 3.5rem 0 1.5rem 0; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px;
+}
+.subTitle {
+    font-family: 'Segoe UI', sans-serif; font-size: 1.4rem; color: #eee; margin: 2.5rem 0 1rem 0; font-weight: 600;
+}
+.text { font-size: 1.2rem; line-height: 1.8; color: #ccc; margin-bottom: 1.5rem; text-align: justify; }
+
+/* LISTAS Y TABLAS */
+.paperList { padding-left: 20px; margin-bottom: 1.5rem; }
+.paperList li { margin-bottom: 0.8rem; font-size: 1.2rem; color: #ccc; line-height: 1.6; }
+.paperList li::marker { color: var(--granate); }
+
+.mathBlock {
+    background: #000; border: 1px solid #333; padding: 1.5rem; margin: 2rem 0;
+    text-align: center; color: #fff; font-family: 'Times New Roman', serif; font-size: 1.5rem; overflow-x: auto;
+}
+.fraction { display: inline-flex; flex-direction: column; vertical-align: middle; margin: 0 5px; text-align: center; }
+.num { border-bottom: 1px solid white; padding-bottom: 3px; display: block; }
+.den { padding-top: 3px; display: block; }
+
+.tableWrapper { overflow-x: auto; margin: 2.5rem 0; border: 1px solid #333; border-radius: 5px; }
+.paperTable { width: 100%; border-collapse: collapse; min-width: 500px; background: rgba(0,0,0,0.3); }
+.paperTable th { padding: 15px; text-align: center; border-bottom: 2px solid #555; color: var(--granate); font-size: 1.1rem; }
+.paperTable td { padding: 12px; text-align: center; color: #ccc; border-bottom: 1px solid #222; font-size: 1.1rem;}
+
+/* MODAL */
+.modalOverlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95); z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+    backdrop-filter: blur(8px); animation: fadeIn 0.3s ease;
+}
+.modalContent {
+    position: relative; width: 95%; height: 95%; display: flex; flex-direction: column;
+    background: #111; border: 1px solid #444; border-radius: 10px; overflow: hidden; box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+.modalHeader {
+    padding: 15px 25px; background: #1a1a1a; border-bottom: 1px solid #333;
+    display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', sans-serif;
+}
+.modalTitle { color: #fff; font-size: 1.3rem; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+.modalTitle i { color: var(--granate); }
+.modalBody {
+    flex: 1; overflow: hidden; display: flex; justify-content: center; align-items: center;
+    background: #050505; position: relative; cursor: grab;
+}
+.modalBody:active { cursor: grabbing; }
+.modalImage {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+.zoomControls { display: flex; gap: 10px; }
+.controlBtn {
+    background: #333; color: white; border: 1px solid #555; width: 40px; height: 40px; border-radius: 8px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.2s;
+}
+.controlBtn:hover { background: var(--granate); border-color: var(--granate); transform: translateY(-2px); }
+.closeBtn { background: transparent; border: none; color: #aaa; font-size: 2rem; cursor: pointer; margin-left: 20px; transition: 0.2s; }
+.closeBtn:hover { color: #fff; transform: rotate(90deg); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* FOOTER CENTRADO */
+.footer {
+    border-top: 1px solid #222; margin-top: 5rem; padding: 3rem 0;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center; color: #555; font-size: 0.9rem; width: 100%;
+}
+
+@media (max-width: 768px) {
+    .paperContainer { padding: 2rem 1.5rem; margin-top: 5rem; }
+    .paperTitle { font-size: 2rem; }
+}

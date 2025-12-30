@@ -1,0 +1,235 @@
+/* src/app/unidades/unidad-ii/resumen-non-rigid/resumen-non-rigid.module.css */
+
+.container {
+    --primary-bg: #050505;
+    --card-bg: rgba(20, 20, 25, 0.8);
+    --granate: #D0002D;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f1f5f9;
+}
+
+/* FONDO */
+.nightSky {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--primary-bg);
+    background: radial-gradient(circle at 50% 50%, #1a0505 0%, #000000 100%);
+    z-index: -2;
+}
+
+.stars {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: -1;
+}
+
+.star {
+    position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* HEADER */
+.header {
+    position: absolute; top: 0; left: 0; width: 100%; z-index: 100;
+    padding: 1.2rem 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.headerContent {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1400px; margin: 0 auto; padding: 0 20px;
+}
+
+.backButton {
+    background-color: #c60025; color: white; padding: 0.6rem 1.5rem;
+    border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;
+    border: none; box-shadow: 0 0 10px rgba(198, 0, 37, 0.3);
+}
+
+.backButton:hover {
+    background-color: #ff0033; transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.5);
+}
+
+.studentInfo { display: flex; gap: 10px; }
+
+.infoBadge {
+    background-color: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
+    color: #ccc; padding: 0.5rem 1rem; border-radius: 20px;
+    font-size: 0.85rem; display: flex; align-items: center; gap: 8px;
+}
+.infoBadge i { color: var(--granate); }
+
+/* HERO */
+.heroSection { padding: 9rem 0 3rem; text-align: center; }
+
+.heroIcon {
+    font-size: 4rem; margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ff3355, var(--granate));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; display: inline-block;
+}
+
+.heroTitle {
+    font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase;
+    background: linear-gradient(90deg, #fff 0%, var(--granate) 50%, #fff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite; line-height: 1.2;
+}
+
+@keyframes shine { to { background-position: 200% center; } }
+
+.heroSubtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+/* PESTAÑAS */
+.tabs {
+    display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border); padding-bottom: 1rem;
+}
+.tabButton {
+    background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+    padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;
+    border-radius: 30px; transition: all 0.3s ease;
+}
+.tabButton:hover { border-color: var(--granate); color: #fff; }
+.activeTab {
+    background: var(--granate); color: #fff; border-color: var(--granate);
+    box-shadow: 0 0 15px rgba(208, 0, 45, 0.4);
+}
+.tabContent { display: none; animation: fadeIn 0.5s ease-out; }
+.activeContent { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* CONTENIDO */
+.contentSection { padding: 2rem 0; }
+.contentCard {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+    padding: 2.5rem; margin-bottom: 2rem; backdrop-filter: blur(10px);
+}
+.sectionTitle {
+    font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--border); padding-bottom: 10px;
+}
+.sectionTitle i { color: var(--granate); }
+.text { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+
+/* LISTAS */
+.infoList ul, .infoList ol { padding-left: 20px; margin-bottom: 1.5rem; }
+.infoList li {
+    margin-bottom: 0.8rem; color: #ccc; line-height: 1.6; position: relative; padding-left: 10px;
+}
+.infoList li::before {
+    content: '➜'; color: var(--granate); position: absolute; left: -15px; font-weight: bold;
+}
+.infoList strong { color: #fff; }
+
+/* --- MAPA MENTAL (GRID 2x2) --- */
+.mapGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Aumentamos el espacio entre columnas para las flechas */
+    gap: 40px 80px; 
+    position: relative;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.mapCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--granate);
+    border-radius: 15px;
+    padding: 25px;
+    position: relative; /* Necesario para posicionar las flechas internas */
+    transition: transform 0.3s;
+    height: 100%; /* Que ocupen toda la altura de la celda */
+    display: flex;
+    flex-direction: column;
+}
+.mapCard:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(208,0,45,0.2); }
+
+.mapHeader {
+    background: var(--granate); color: white;
+    padding: 8px 15px; border-radius: 8px;
+    font-weight: bold; text-transform: uppercase; font-size: 0.9rem;
+    position: absolute; top: -15px; left: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.mapBody { margin-top: 15px; font-size: 0.9rem; color: #ccc; flex-grow: 1; }
+.mapBody ul { list-style: none; padding: 0; }
+.mapBody li {
+    position: relative; padding-left: 15px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;
+}
+.mapBody li::before {
+    content: '•'; color: var(--granate); position: absolute; left: 0; font-weight: bold;
+}
+
+/* FLECHAS DEL MAPA */
+.arrowIcon {
+    position: absolute;
+    color: var(--granate);
+    font-size: 2.5rem;
+    z-index: 10;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
+    animation: pulse 2s infinite;
+}
+
+/* Flecha a la derecha (para cajas 1 y 3) */
+.arrowRight {
+    top: 50%;
+    right: -50px; /* Se sale de la caja hacia la derecha */
+    transform: translateY(-50%);
+}
+
+/* Flecha hacia abajo (para caja 2) */
+.arrowDown {
+    bottom: -50px; /* Se sale de la caja hacia abajo */
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+}
+
+/* Flecha saliente diagonal (para caja 4) */
+.arrowOut {
+    top: -30px;
+    right: -30px;
+    transform: rotate(-45deg);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; transform: scale(1) rotate(var(--rotation, 0deg)); }
+    50% { opacity: 1; transform: scale(1.1) rotate(var(--rotation, 0deg)); }
+}
+/* Ajuste para mantener la rotación en la animación */
+.arrowDown { --rotation: 90deg; }
+.arrowOut { --rotation: -45deg; }
+
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid #222; margin-top: 5rem; padding: 3rem 0;
+    text-align: center; color: #555; font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .mapGrid { grid-template-columns: 1fr; gap: 50px; }
+    .arrowIcon { display: none; /* Ocultar flechas en móvil */ }
+    .arrowRight, .arrowDown, .arrowOut { display: none; }
+}

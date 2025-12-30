@@ -1,0 +1,300 @@
+/* src/app/unidades/unidad-ii/juego-supervivencia/simulacion.module.css */
+
+.container {
+    --primary-bg: #050505;
+    --card-bg: rgba(20, 20, 25, 0.95);
+    --granate: #D0002D;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f1f5f9;
+    padding-top: 130px; /* Espacio suficiente para el header fijo */
+}
+
+/* --- FONDO --- */
+.bgGaming {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #1a0505 0%, #000000 80%);
+    z-index: -2;
+}
+.gridOverlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(208, 0, 45, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(208, 0, 45, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- HEADER (PANEL SUPERIOR) --- */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between; /* Botón a la izquierda, Info a la derecha */
+    align-items: center;
+}
+
+/* LÍNEA DIVISORIA */
+.separatorLine {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--granate), transparent);
+    box-shadow: 0 0 10px var(--granate);
+    opacity: 0.8;
+}
+
+.backButton {
+    background-color: #c60025;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 15px rgba(198, 0, 37, 0.4);
+}
+.backButton:hover {
+    background-color: #ff0033;
+    transform: scale(1.05);
+}
+
+.studentInfo {
+    display: flex;
+    gap: 15px;
+}
+
+.infoBadge {
+    background-color: #111;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.infoBadge i {
+    color: var(--granate);
+}
+
+/* --- TÍTULO ANIMADO --- */
+.pageTitle {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* Corrección del degradado */
+    background: linear-gradient(90deg, #ff0033, #ffffff, #ff0033);
+    background-size: 200% auto;
+    color: #fff; /* Fallback */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shine 4s linear infinite;
+    margin-top: 20px;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+.pageSubtitle {
+    text-align: center;
+    color: #aaa;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 60px;
+}
+
+/* --- TARJETAS --- */
+.card {
+    background: rgba(20, 20, 25, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--granate);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff3355;
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.icon { color: var(--granate); }
+
+.subTitle {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin: 25px 0 10px 0;
+    font-weight: 600;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- LISTAS --- */
+.list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.list li {
+    margin-bottom: 10px;
+    color: #ccc;
+    line-height: 1.6;
+}
+.list li::marker {
+    color: var(--granate);
+}
+
+/* --- CÓDIGO R (TERMINAL) --- */
+.codeContainer {
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+.codeHeader {
+    background: #1a1a1a;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    font-family: monospace;
+    color: #888;
+}
+.copyButton {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.copyButton:hover { background: #fff; color: #000; }
+
+.preBlock {
+    padding: 20px;
+    margin: 0;
+    color: #e0e0e0;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* --- CONSOLA DE SALIDA --- */
+.consoleContainer {
+    background: #000;
+    border: 1px solid #333;
+    border-left: 4px solid #22c55e;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    font-family: 'Consolas', monospace;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+.consoleHeader {
+    background: #111;
+    padding: 5px 15px;
+    border-bottom: 1px solid #222;
+    color: #555;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.consoleOutput {
+    padding: 20px;
+    margin: 0;
+    color: #4ade80;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+/* --- IMAGEN --- */
+.imageWrapper {
+    text-align: center;
+    margin: 30px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.imageWrapper img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(208, 0, 45, 0.2);
+    transition: transform 0.3s;
+}
+.imageWrapper img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(208, 0, 45, 0.4);
+}
+.caption {
+    margin-top: 10px;
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+    color: #666;
+    font-size: 0.9rem;
+}
